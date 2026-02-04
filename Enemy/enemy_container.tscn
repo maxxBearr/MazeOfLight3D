@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2yxn7na3deby"]
+
+[ext_resource type="Script" uid="uid://btsl5ccmrfxu2" path="res://Enemy/enemy_container.gd" id="1_mfdor"]
+
+[node name="EnemyContainer" type="Node3D"]
+script = ExtResource("1_mfdor")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 12.0

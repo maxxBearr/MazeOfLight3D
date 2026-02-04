@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://clojm02e44vuu"]
+
+[ext_resource type="Script" uid="uid://dbksp6isc32e6" path="res://Enemy/Ghost.gd" id="1_d4t3c"]
+[ext_resource type="ArrayMesh" uid="uid://dafsg0iwctx3x" path="res://Enemy/GhostImport/GhostMesh.tres" id="2_b7kls"]
+[ext_resource type="PackedScene" uid="uid://djyrj81bxqlsy" path="res://Enemy/damage_label.tscn" id="2_kcclt"]
+[ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="3_o8pi0"]
+[ext_resource type="Texture2D" uid="uid://cadnxe0bt1tax" path="res://Enemy/GhostImport/Ghost_Opacity.tga.png" id="4_o8pi0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jckng"]
+render_priority = 0
+shader = ExtResource("3_o8pi0")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_o8pi0")
+shader_parameter/shading_levels = 8
+shader_parameter/min_brightness = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jsjij"]
+
+[node name="Ghost1" type="Area3D"]
+script = ExtResource("1_d4t3c")
+speed = 4.29
+inherentColor = Color(1, 0.348638, 0.6328528, 1)
+energyResistance = 12.87
+rangeResistance = 13.825
+angleResistance = 18.625
+damageLabelScene = ExtResource("2_kcclt")
+
+[node name="GhostMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-3.141, 0, -4.742778e-07, 0, 3.141, 0, 4.742778e-07, 0, -3.141, 0, 2, 0)
+transparency = 0.8
+mesh = ExtResource("2_b7kls")
+surface_material_override/0 = SubResource("ShaderMaterial_jckng")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.141, 0, 0, 0, 3.141, 0, 0, 0, 3.141, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_jsjij")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+light_energy = 0.806
+light_indirect_energy = 0.609
+light_volumetric_fog_energy = 0.557
+omni_range = 1.596
+omni_attenuation = 0.635

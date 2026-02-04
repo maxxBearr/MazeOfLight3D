@@ -1,0 +1,13 @@
+# Blender MTL File: 'Key_Bronze.blend'
+# Material Count: 1
+
+newmtl Bronze_Key
+Ns 297.012214
+Ka 0.702128 0.702128 0.702128
+Kd 0.800000 0.800000 0.800000
+Ks 0.886525 0.886525 0.886525
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\Arthur\\Desktop\\Castle_RPG\\Textures\\Bronze.png

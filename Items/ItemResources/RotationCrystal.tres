@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://gxcf228vh3ev"]
+
+[ext_resource type="Texture2D" uid="uid://blm7tw00cdda0" path="res://InteriorCastle/Textures/Book01.png" id="1_2tlas"]
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="2_unch1"]
+
+[resource]
+script = ExtResource("2_unch1")
+itemName = "RotationCrystal"
+description = "Increase rotation speed by 75%"
+icon = ExtResource("1_2tlas")
+effectType = "LanternSpeed"
+effectValue = 1.75
+metadata/_custom_type_script = "uid://chabwrui44qbp"

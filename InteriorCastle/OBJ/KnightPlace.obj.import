@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bstbunlwb5ybc"
+path="res://.godot/imported/KnightPlace.obj-7567c614bf7939be92da30cbfee9e0ac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/KnightPlace.obj-7567c614bf7939be92da30cbfee9e0ac.mesh"]
+
+source_file="res://InteriorCastle/OBJ/KnightPlace.obj"
+dest_files=["res://.godot/imported/KnightPlace.obj-7567c614bf7939be92da30cbfee9e0ac.mesh", "res://.godot/imported/KnightPlace.obj-7567c614bf7939be92da30cbfee9e0ac.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

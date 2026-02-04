@@ -1,0 +1,12 @@
+# Blender 5.0.1 MTL File: 'Floor01.blend'
+# www.blender.org
+
+newmtl Floor01
+Ns 0.000000
+Ka 0.234043 0.234043 0.234043
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:/Users/max/AppData/Local/Temp/4152712a-c178-4098-a0fc-c1aec22b6164_InteriorCastle.zip.InteriorCastle.zip/InteriorCastle/Textures/Floor01.png

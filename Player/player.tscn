@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://btaqqfe72s0ng"]
+
+[ext_resource type="Script" uid="uid://bp1vhhorebw47" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="PackedScene" uid="uid://dnvbetocs5gmc" path="res://lantern/Lantern.tscn" id="2_btcbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
+radius = 0.7
+height = 2.3
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_4ntmi")
+SPEED = 9.455
+ROTATION_SPEED = 8.545
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hvfyp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_l8h54")
+skeleton = NodePath("../..")
+
+[node name="Lantern" parent="." instance=ExtResource("2_btcbx")]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.087155774, 0, -0.087155774, 0.9961947, 1.4, -0.5, 0.20000005)
+energy = 4.019
+angle = 19
+lightRange = 8.217
+damageMutliplier = 8.0

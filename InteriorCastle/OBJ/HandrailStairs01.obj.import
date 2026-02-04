@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oheur6cimrfj"
+path="res://.godot/imported/HandrailStairs01.obj-9f6bf674325f964c24827fa84ff28162.mesh"
+
+[deps]
+
+files=["res://.godot/imported/HandrailStairs01.obj-9f6bf674325f964c24827fa84ff28162.mesh"]
+
+source_file="res://InteriorCastle/OBJ/HandrailStairs01.obj"
+dest_files=["res://.godot/imported/HandrailStairs01.obj-9f6bf674325f964c24827fa84ff28162.mesh", "res://.godot/imported/HandrailStairs01.obj-9f6bf674325f964c24827fa84ff28162.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

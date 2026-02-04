@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c3o0mbt4whmpn"]
+
+[ext_resource type="Texture2D" uid="uid://c8yils40bcfv0" path="res://InteriorCastle/Textures/Gold.png" id="1_f0kpk"]
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_y2owm"]
+
+[resource]
+script = ExtResource("1_y2owm")
+itemName = "Energy Crystal"
+description = "Increase Light Intensity by 80%%"
+icon = ExtResource("1_f0kpk")
+effectType = "Energy"
+effectValue = 1.85
+metadata/_custom_type_script = "uid://chabwrui44qbp"

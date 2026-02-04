@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csnlngkdm2qvq"
+path="res://.godot/imported/BookshelfLarge.obj-1dbfdbc47e3014b0549d8f8e98806235.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BookshelfLarge.obj-1dbfdbc47e3014b0549d8f8e98806235.mesh"]
+
+source_file="res://InteriorCastle/OBJ/BookshelfLarge.obj"
+dest_files=["res://.godot/imported/BookshelfLarge.obj-1dbfdbc47e3014b0549d8f8e98806235.mesh", "res://.godot/imported/BookshelfLarge.obj-1dbfdbc47e3014b0549d8f8e98806235.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
