@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://btaqqfe72s0ng"]
+[gd_scene load_steps=6 format=3 uid="uid://btaqqfe72s0ng"]
 
 [ext_resource type="Script" uid="uid://bp1vhhorebw47" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://dnvbetocs5gmc" path="res://lantern/Lantern.tscn" id="2_btcbx"]
+[ext_resource type="PackedScene" uid="uid://rs6ltlmva8kc" path="res://Character/UAL1.glb" id="2_gwnis"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
 
@@ -13,6 +14,9 @@ height = 2.3
 script = ExtResource("1_4ntmi")
 SPEED = 9.455
 ROTATION_SPEED = 8.545
+
+[node name="UAL1" parent="." instance=ExtResource("2_gwnis")]
+unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hvfyp")

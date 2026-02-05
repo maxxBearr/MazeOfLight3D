@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var currentHealth : int
 @onready var camera : Camera3D = get_viewport().get_camera_3d()
 @onready var omni_light_3d: OmniLight3D = %OmniLight3D
-
+@onready var animPlayer = %UAL1/AnimationPlayer
 
 signal healthChanged(newHealth:int)
 func _ready() -> void:
@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * SPEED
 		
 		# Rotate player to face movement direction
-		var target_angle = atan2(direction.x, direction.z)
-		rotation.y = lerp_angle(rotation.y, target_angle, ROTATION_SPEED * delta)
+		var localDirection = direction.rotated(Vector3.UP, -rotation.y)
+		updateAnimation(localDirection)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -40,6 +40,28 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
+func updateAnimation(localDir:Vector3):
+	# local_dir.z > 0 means moving forward (relative to facing)
+	# local_dir.z < 0 means moving backward
+	# local_dir.x tells you left/right
+	if abs(localDir.z) > abs(localDir.x):
+		#Primarily forward/backwards
+		if localDir.z > 0:
+			playAnimation("Jog_Fwd") #forwad
+		else:
+			playAnimation("Jog_Bwd") #back
+	else: 
+		#strafing
+		if localDir.x > 0:
+			playAnimation("Jog_Right") # right
+		else:
+			playAnimation("Jog_Left") #left
+
+
+
+func playAnimation(animName : String):
+	if animPlayer.current_animation != animName:
+		animPlayer.play(animName)
 
 func takeDamage(amount: int):
 	currentHealth -= amount

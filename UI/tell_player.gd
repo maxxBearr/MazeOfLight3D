@@ -19,7 +19,7 @@ func _ready() -> void:
 func printText(newText: String):
 	text = newText
 	var tween = create_tween()
-	tween.tween_property(self, "visible_ratio", 1.0, 4.0)
+	tween.tween_property(self, "visible_ratio", 1.0, 5.0)
 	tween.finished.connect(onTweenFinished)
 
 func _process(delta: float) -> void:
@@ -29,5 +29,7 @@ func _process(delta: float) -> void:
 
 
 func onTweenFinished():
-	get_tree().create_timer(3.0).timeout.connect(func():
-		visible_ratio = 0.0)
+	get_tree().create_timer(4.0).timeout.connect(func():
+		var tween = create_tween()
+		tween.tween_property(self, "modulate:a", 0.0, 1.4)
+)
