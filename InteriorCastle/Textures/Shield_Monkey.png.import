@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxabdegptm8jv"
-path.s3tc="res://.godot/imported/Shield_Monkey.png-64c1ffbe327eaf9d96fcb708ac75b981.s3tc.ctex"
+path.s3tc="res://.godot/imported/Shield_Monkey.png-dce8683f4c27f9c072beaec90bb17ae0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Shield_Monkey.png"
-dest_files=["res://.godot/imported/Shield_Monkey.png-64c1ffbe327eaf9d96fcb708ac75b981.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Shield_Monkey.png"
+dest_files=["res://.godot/imported/Shield_Monkey.png-dce8683f4c27f9c072beaec90bb17ae0.s3tc.ctex"]
 
 [params]
 

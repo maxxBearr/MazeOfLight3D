@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2gbs4irl0vyq"
-path.s3tc="res://.godot/imported/WoodDoor03.png-028cc3c69745bb834b18e0aef82a7863.s3tc.ctex"
+path.s3tc="res://.godot/imported/WoodDoor03.png-87f3a31340b140bb6ff2c79b8497b8b1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/WoodDoor03.png"
-dest_files=["res://.godot/imported/WoodDoor03.png-028cc3c69745bb834b18e0aef82a7863.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/WoodDoor03.png"
+dest_files=["res://.godot/imported/WoodDoor03.png-87f3a31340b140bb6ff2c79b8497b8b1.s3tc.ctex"]
 
 [params]
 

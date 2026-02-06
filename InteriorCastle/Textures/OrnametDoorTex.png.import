@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cydihplayud60"
-path.s3tc="res://.godot/imported/OrnametDoorTex.png-10f60b29ad980a439be8bb235d6b47d0.s3tc.ctex"
+path.s3tc="res://.godot/imported/OrnametDoorTex.png-25608f42e3f4810d909168344db25971.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/OrnametDoorTex.png"
-dest_files=["res://.godot/imported/OrnametDoorTex.png-10f60b29ad980a439be8bb235d6b47d0.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/OrnametDoorTex.png"
+dest_files=["res://.godot/imported/OrnametDoorTex.png-25608f42e3f4810d909168344db25971.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvj64w0s7ad5t"
-path.s3tc="res://.godot/imported/Wood_Bookshelf.png-63c11697816764adc8d9b172f772f6b4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Wood_Bookshelf.png-aea8f0b6bad0aedacc00d5aadf5fb7ea.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Wood_Bookshelf.png"
-dest_files=["res://.godot/imported/Wood_Bookshelf.png-63c11697816764adc8d9b172f772f6b4.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Wood_Bookshelf.png"
+dest_files=["res://.godot/imported/Wood_Bookshelf.png-aea8f0b6bad0aedacc00d5aadf5fb7ea.s3tc.ctex"]
 
 [params]
 

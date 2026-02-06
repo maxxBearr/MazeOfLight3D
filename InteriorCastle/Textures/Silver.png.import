@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cchwr50ce7tdw"
-path.s3tc="res://.godot/imported/Silver.png-22a95646618825959ba7cd91da95f0c5.s3tc.ctex"
+path.s3tc="res://.godot/imported/Silver.png-22c739628b85f67c3adbe6fb56c4d0b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Silver.png"
-dest_files=["res://.godot/imported/Silver.png-22a95646618825959ba7cd91da95f0c5.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Silver.png"
+dest_files=["res://.godot/imported/Silver.png-22c739628b85f67c3adbe6fb56c4d0b2.s3tc.ctex"]
 
 [params]
 

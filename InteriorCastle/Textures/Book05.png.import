@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpwstxmnxuksu"
-path.s3tc="res://.godot/imported/Book05.png-54076a5be1b4c408b1dd6269ece72eb4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Book05.png-5e1969bf4fbde4608092d2d33fc3e2d9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Book05.png"
-dest_files=["res://.godot/imported/Book05.png-54076a5be1b4c408b1dd6269ece72eb4.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Book05.png"
+dest_files=["res://.godot/imported/Book05.png-5e1969bf4fbde4608092d2d33fc3e2d9.s3tc.ctex"]
 
 [params]
 

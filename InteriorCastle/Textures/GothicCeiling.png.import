@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beyeg182kmoyx"
-path.s3tc="res://.godot/imported/GothicCeiling.png-3195257811ce80907e7659fa62fceaab.s3tc.ctex"
+path.s3tc="res://.godot/imported/GothicCeiling.png-dd12b4bdcc9c1f0a9621474be7dfc083.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/GothicCeiling.png"
-dest_files=["res://.godot/imported/GothicCeiling.png-3195257811ce80907e7659fa62fceaab.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/GothicCeiling.png"
+dest_files=["res://.godot/imported/GothicCeiling.png-dd12b4bdcc9c1f0a9621474be7dfc083.s3tc.ctex"]
 
 [params]
 

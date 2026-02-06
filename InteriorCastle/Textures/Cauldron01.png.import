@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dquhfkyt63bkd"
-path.s3tc="res://.godot/imported/Cauldron01.png-0509013bdbc53483f692a3203c22fd1a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Cauldron01.png-c7eb711614475ea7628e1b00422f0a20.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Cauldron01.png"
-dest_files=["res://.godot/imported/Cauldron01.png-0509013bdbc53483f692a3203c22fd1a.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Cauldron01.png"
+dest_files=["res://.godot/imported/Cauldron01.png-c7eb711614475ea7628e1b00422f0a20.s3tc.ctex"]
 
 [params]
 

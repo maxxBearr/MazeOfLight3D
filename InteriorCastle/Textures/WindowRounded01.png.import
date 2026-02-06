@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hw5nwpqawcmq"
-path.s3tc="res://.godot/imported/WindowRounded01.png-b0585fc563fed3a2a4365b087a16dbd9.s3tc.ctex"
+path.s3tc="res://.godot/imported/WindowRounded01.png-bdc962fc0c989ba914fd099b29d19899.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/WindowRounded01.png"
-dest_files=["res://.godot/imported/WindowRounded01.png-b0585fc563fed3a2a4365b087a16dbd9.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/WindowRounded01.png"
+dest_files=["res://.godot/imported/WindowRounded01.png-bdc962fc0c989ba914fd099b29d19899.s3tc.ctex"]
 
 [params]
 

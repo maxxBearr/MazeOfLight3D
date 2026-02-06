@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=5 format=4 uid="uid://dafsg0iwctx3x"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://dafsg0iwctx3x"]
 
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="1_o2830"]
 [ext_resource type="Texture2D" uid="uid://cadnxe0bt1tax" path="res://Enemy/GhostImport/Ghost_Opacity.tga.png" id="2_jckng"]

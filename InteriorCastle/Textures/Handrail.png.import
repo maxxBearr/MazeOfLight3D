@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyy5320ko5vv8"
-path.s3tc="res://.godot/imported/Handrail.png-707a72e58bb1ea66e68096df82a88eb7.s3tc.ctex"
+path.s3tc="res://.godot/imported/Handrail.png-6be63196d5ccbeb5ad4321441120a9dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Handrail.png"
-dest_files=["res://.godot/imported/Handrail.png-707a72e58bb1ea66e68096df82a88eb7.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Handrail.png"
+dest_files=["res://.godot/imported/Handrail.png-6be63196d5ccbeb5ad4321441120a9dc.s3tc.ctex"]
 
 [params]
 

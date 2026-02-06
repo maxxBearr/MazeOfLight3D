@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnqeq36482qas"
-path.s3tc="res://.godot/imported/Floor02.png-1f1364afe18ce24f972dec569b710b90.s3tc.ctex"
+path.s3tc="res://.godot/imported/Floor02.png-5b45605f41f0b6df600e9ca943eb8fad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Floor02.png"
-dest_files=["res://.godot/imported/Floor02.png-1f1364afe18ce24f972dec569b710b90.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Floor02.png"
+dest_files=["res://.godot/imported/Floor02.png-5b45605f41f0b6df600e9ca943eb8fad.s3tc.ctex"]
 
 [params]
 

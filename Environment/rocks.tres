@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=35 format=4 uid="uid://chd2bofbwjc0q"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://chd2bofbwjc0q"]
 
 [ext_resource type="Texture2D" uid="uid://ch65kpv4vcv3f" path="res://Environment/Rocks/Rocks_0.png" id="1_unhgd"]
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="2_k8jin"]

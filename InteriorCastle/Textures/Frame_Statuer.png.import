@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be6hphfku5qbw"
-path.s3tc="res://.godot/imported/Frame_Statuer.png-ce5dbf998e7538a17a7745997c237bd7.s3tc.ctex"
+path.s3tc="res://.godot/imported/Frame_Statuer.png-d6b00cabb063b5984c2825e621605412.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Frame_Statuer.png"
-dest_files=["res://.godot/imported/Frame_Statuer.png-ce5dbf998e7538a17a7745997c237bd7.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Frame_Statuer.png"
+dest_files=["res://.godot/imported/Frame_Statuer.png-d6b00cabb063b5984c2825e621605412.s3tc.ctex"]
 
 [params]
 

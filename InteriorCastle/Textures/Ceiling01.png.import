@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgcdlwtnvpm0i"
-path.s3tc="res://.godot/imported/Ceiling01.png-10ac9278ebe80814c533b6eb066dbee7.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ceiling01.png-75f7f532782e78028242330dd766be3f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Ceiling01.png"
-dest_files=["res://.godot/imported/Ceiling01.png-10ac9278ebe80814c533b6eb066dbee7.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Ceiling01.png"
+dest_files=["res://.godot/imported/Ceiling01.png-75f7f532782e78028242330dd766be3f.s3tc.ctex"]
 
 [params]
 

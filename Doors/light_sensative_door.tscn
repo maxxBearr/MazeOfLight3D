@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chdx3xp6uf6fs"]
+[gd_scene format=3 uid="uid://chdx3xp6uf6fs"]
 
 [ext_resource type="Script" uid="uid://clrgtagei1okb" path="res://Doors/light_sensative_door.gd" id="1_m2l1p"]
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="2_fueea"]
@@ -20,33 +20,31 @@ data = PackedVector3Array(-0.0016999999, 0.0037, 0.0066, -0.0015, 0.0034999999, 
 height = 0.031
 radius = 0.033
 
-[node name="LightSensativeDoor" type="Node3D"]
+[node name="LightSensativeDoor" type="Node3D" unique_id=1823636653]
 script = ExtResource("1_m2l1p")
-requiredColor = null
-tolerance = null
 
-[node name="Door_01" type="MeshInstance3D" parent="."]
+[node name="Door_01" type="MeshInstance3D" parent="." unique_id=1744760401]
 unique_name_in_owner = true
 transform = Transform3D(140, 0, 0, 0, 140, 0, 0, 0, 140, 0, 0, 0)
 mesh = ExtResource("2_m2l1p")
 surface_material_override/0 = SubResource("ShaderMaterial_dij2l")
 
-[node name="StaticForPlayer" type="StaticBody3D" parent="Door_01"]
+[node name="StaticForPlayer" type="StaticBody3D" parent="Door_01" unique_id=873261873]
 unique_name_in_owner = true
 transform = Transform3D(0.20635714, 0, 0, 0, 0.20635714, 0, 0, 0, 0.20635714, 0, 0, 0)
 
-[node name="PlayerCollision" type="CollisionShape3D" parent="Door_01/StaticForPlayer"]
+[node name="PlayerCollision" type="CollisionShape3D" parent="Door_01/StaticForPlayer" unique_id=687174562]
 unique_name_in_owner = true
 transform = Transform3D(4.8459673, 0, 0, 0, 4.8459673, 0, 0, 0, 4.8459673, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_uyv6h")
 
-[node name="StaticForRay" type="StaticBody3D" parent="Door_01"]
+[node name="StaticForRay" type="StaticBody3D" parent="Door_01" unique_id=1067903453]
 unique_name_in_owner = true
 transform = Transform3D(0.20635714, 0, 0, 0, 0.20635714, 0, 0, 0, 0.20635714, 0, 0, 0)
 collision_layer = 4
 collision_mask = 4
 
-[node name="RayCollision" type="CollisionShape3D" parent="Door_01/StaticForRay"]
+[node name="RayCollision" type="CollisionShape3D" parent="Door_01/StaticForRay" unique_id=1989208658]
 unique_name_in_owner = true
 transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0.013845622)
 shape = SubResource("CylinderShape3D_fueea")

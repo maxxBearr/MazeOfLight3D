@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs3vht1sys2wc"
-path.s3tc="res://.godot/imported/Lamp02.png-b627d14d3211509468b66a165cdfa166.s3tc.ctex"
+path.s3tc="res://.godot/imported/Lamp02.png-62d3e22abd28bf04f4c762b16e20d369.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Lamp02.png"
-dest_files=["res://.godot/imported/Lamp02.png-b627d14d3211509468b66a165cdfa166.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Lamp02.png"
+dest_files=["res://.godot/imported/Lamp02.png-62d3e22abd28bf04f4c762b16e20d369.s3tc.ctex"]
 
 [params]
 

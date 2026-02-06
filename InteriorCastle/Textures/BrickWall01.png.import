@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8t3x8xrujt6e"
-path.s3tc="res://.godot/imported/BrickWall01.png-8553a57de42cb3517dab6fd6868ddfc5.s3tc.ctex"
+path.s3tc="res://.godot/imported/BrickWall01.png-e7517ec3edb9c9956a1964390a602c60.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/BrickWall01.png"
-dest_files=["res://.godot/imported/BrickWall01.png-8553a57de42cb3517dab6fd6868ddfc5.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/BrickWall01.png"
+dest_files=["res://.godot/imported/BrickWall01.png-e7517ec3edb9c9956a1964390a602c60.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgocv5ojjsuc6"
-path.s3tc="res://.godot/imported/Stairs01.png-19b921c04678ad4adf36714d9c1053e1.s3tc.ctex"
+path.s3tc="res://.godot/imported/Stairs01.png-fd33c5e307a687234b7a526ab70e7e97.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Stairs01.png"
-dest_files=["res://.godot/imported/Stairs01.png-19b921c04678ad4adf36714d9c1053e1.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Stairs01.png"
+dest_files=["res://.godot/imported/Stairs01.png-fd33c5e307a687234b7a526ab70e7e97.s3tc.ctex"]
 
 [params]
 

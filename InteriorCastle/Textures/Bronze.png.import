@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh3nam0i6nlb"
-path.s3tc="res://.godot/imported/Bronze.png-9a2de3ec00f74f876422c52c6a0729ec.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bronze.png-9cea3d35391d8f17c3e32e90cae103e9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Bronze.png"
-dest_files=["res://.godot/imported/Bronze.png-9a2de3ec00f74f876422c52c6a0729ec.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Bronze.png"
+dest_files=["res://.godot/imported/Bronze.png-9cea3d35391d8f17c3e32e90cae103e9.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bajqhdc27lfgb"
-path.s3tc="res://.godot/imported/Frame_Leon.png-2fb2e0c32aba2740a0f24d78b16a1902.s3tc.ctex"
+path.s3tc="res://.godot/imported/Frame_Leon.png-73d918afd771e2a0e06161230bde9e79.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Frame_Leon.png"
-dest_files=["res://.godot/imported/Frame_Leon.png-2fb2e0c32aba2740a0f24d78b16a1902.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Frame_Leon.png"
+dest_files=["res://.godot/imported/Frame_Leon.png-73d918afd771e2a0e06161230bde9e79.s3tc.ctex"]
 
 [params]
 

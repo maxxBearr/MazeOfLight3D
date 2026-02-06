@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgfpq5lqyl61n"
-path.s3tc="res://.godot/imported/Red_Cloth01.png-460f98a687517d63154eeeadafda5fc5.s3tc.ctex"
+path.s3tc="res://.godot/imported/Red_Cloth01.png-b1685bf04c94400df6c4154075dff5b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Red_Cloth01.png"
-dest_files=["res://.godot/imported/Red_Cloth01.png-460f98a687517d63154eeeadafda5fc5.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Red_Cloth01.png"
+dest_files=["res://.godot/imported/Red_Cloth01.png-b1685bf04c94400df6c4154075dff5b2.s3tc.ctex"]
 
 [params]
 

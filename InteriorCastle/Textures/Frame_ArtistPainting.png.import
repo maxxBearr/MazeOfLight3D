@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8le0t1vry82n"
-path.s3tc="res://.godot/imported/Frame_ArtistPainting.png-4bd60e4fb0f2a30bdbd000579db843df.s3tc.ctex"
+path.s3tc="res://.godot/imported/Frame_ArtistPainting.png-f859eb5aa3594c4e39f69d136b57b8f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Frame_ArtistPainting.png"
-dest_files=["res://.godot/imported/Frame_ArtistPainting.png-4bd60e4fb0f2a30bdbd000579db843df.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Frame_ArtistPainting.png"
+dest_files=["res://.godot/imported/Frame_ArtistPainting.png-f859eb5aa3594c4e39f69d136b57b8f3.s3tc.ctex"]
 
 [params]
 

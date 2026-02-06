@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://egjd5c6jfw5w"
-path.s3tc="res://.godot/imported/Shield_Buffalo.png-2a5a3cbd9d0d67ba62a0db9947628418.s3tc.ctex"
+path.s3tc="res://.godot/imported/Shield_Buffalo.png-5c1b77e92761f9568c75cd960d1b5b4d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Shield_Buffalo.png"
-dest_files=["res://.godot/imported/Shield_Buffalo.png-2a5a3cbd9d0d67ba62a0db9947628418.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Shield_Buffalo.png"
+dest_files=["res://.godot/imported/Shield_Buffalo.png-5c1b77e92761f9568c75cd960d1b5b4d.s3tc.ctex"]
 
 [params]
 

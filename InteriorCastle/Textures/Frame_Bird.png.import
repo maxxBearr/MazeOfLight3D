@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba38kf5kj4vv6"
-path.s3tc="res://.godot/imported/Frame_Bird.png-9dc66ea5fb20f79e169f460496d03a39.s3tc.ctex"
+path.s3tc="res://.godot/imported/Frame_Bird.png-443e78c20ee62f62b8902e8c616a58a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://InteriorCastle/textures/Frame_Bird.png"
-dest_files=["res://.godot/imported/Frame_Bird.png-9dc66ea5fb20f79e169f460496d03a39.s3tc.ctex"]
+source_file="res://InteriorCastle/Textures/Frame_Bird.png"
+dest_files=["res://.godot/imported/Frame_Bird.png-443e78c20ee62f62b8902e8c616a58a9.s3tc.ctex"]
 
 [params]
 

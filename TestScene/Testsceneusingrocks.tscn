@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jp7ileg06mn7"]
+[gd_scene format=3 uid="uid://jp7ileg06mn7"]
 
 [ext_resource type="MeshLibrary" uid="uid://bawoqh58bvv5m" path="res://Environment/wallandfloor.tres" id="1_xkkxw"]
 [ext_resource type="Script" uid="uid://bl0nmw01mmolp" path="res://Environment/floorTiles.gd" id="2_3lqco"]
@@ -48,9 +48,9 @@ shader_parameter/saturation = 2.2290001058775
 shader_parameter/posterize_levels = 14.11600057551
 shader_parameter/enable_posterize = false
 
-[node name="Scene Using Walls" type="Node3D"]
+[node name="Scene Using Walls" type="Node3D" unique_id=632322887]
 
-[node name="TIles" type="GridMap" parent="."]
+[node name="TIles" type="GridMap" parent="." unique_id=463720856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 0)
 mesh_library = ExtResource("1_xkkxw")
 cell_size = Vector3(4, 4, 4)
@@ -60,7 +60,7 @@ data = {
 }
 script = ExtResource("2_3lqco")
 
-[node name="Rocks" type="GridMap" parent="."]
+[node name="Rocks" type="GridMap" parent="." unique_id=355722317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 mesh_library = ExtResource("2_ywc8h")
 data = {
@@ -68,10 +68,10 @@ data = {
 }
 script = ExtResource("3_ywc8h")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("3_3lqco")]
+[node name="CharacterBody3D" parent="." unique_id=1649261529 instance=ExtResource("3_3lqco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 4.9, 95)
 
-[node name="PlayerCam" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+[node name="PlayerCam" type="Camera3D" parent="." unique_id=1720600707 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.80385685, -0.34117636, 0.48725033, 0, 0.81915206, 0.57357645, -0.5948228, -0.46107337, 0.658481, 86.18, 16.335, 109.28)
 projection = 1
 current = true
@@ -79,347 +79,357 @@ size = 22.425
 script = ExtResource("4_l8jgl")
 target = NodePath("../CharacterBody3D")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1028673645]
 environment = SubResource("Environment_wicfy")
 
-[node name="EnemyContainer" parent="." instance=ExtResource("12_tcjbf")]
+[node name="EnemyContainer" parent="." unique_id=1259408416 instance=ExtResource("12_tcjbf")]
 enemyScene = ExtResource("11_jls5w")
 
-[node name="ItemPickUp" parent="." instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp" parent="." unique_id=221881607 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.1, 47)
 setCrystalLight = Color(0.93367976, 0.48212218, 1, 1)
 
-[node name="LigthSensetiveWallCluster" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster" type="Node3D" parent="." unique_id=859662465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 3, 0)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster" unique_id=1335714918 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(6, 0, 0, 0, 11, 0, 0, 0, 6, -5, 0, 0)
 requiredColor = Color(0, 0.4278155, 0.9608336, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster" unique_id=1387515105 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(4.2426405, 0, -4.2426405, 0, 11, 0, 4.2426405, 0, 4.2426405, 2, 0, 0)
 requiredColor = Color(0, 0.4278155, 0.9608336, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster3" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster3" type="Node3D" parent="." unique_id=597136348]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9, 3, 0)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster3" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster3" unique_id=1902261134 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(6, 0, 0, 0, 11, 0, 0, 0, 6, -5, 1.3113416e-07, -3)
 requiredColor = Color(0, 0.4278155, 0.9608336, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster3" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster3" unique_id=776165610 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(4.2426405, 0, -4.2426405, 0, 11, 0, 4.2426405, 0, 4.2426405, 2, 1.3113416e-07, -3)
 requiredColor = Color(0, 0.4278155, 0.9608336, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster6" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster6" type="Node3D" parent="." unique_id=1460217152]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 2.3, -64)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster6" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster6" unique_id=1312159151 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(6, 0, 0, 0, -4.808253e-07, 6, 0, -11, -2.6226832e-07, -3, 0, -1.0000001)
 requiredColor = Color(1, 0.35230362, 0.5275675, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster6" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster6" unique_id=92361427 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(3.674234, -7.778174, -2.1213205, 3.6742334, 7.778173, -2.1213205, 3.0000005, -1.2444681e-07, 5.1961517, 2, -2, -2.2000008)
 requiredColor = Color(0, 0.75842106, 0.42287478, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster7" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster7" type="Node3D" parent="." unique_id=108101044]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -66, 2.3, 86)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster7" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster7" unique_id=1797969675 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.598076, -5.500001, 4.5, -5.1961527, -6.4418515e-08, 3, -1.5000002, -9.526279, -2.5980763, -3, 0, -2)
 requiredColor = Color(0.85824585, 0.049840085, 0.27681956, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster7" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster7" unique_id=638489830 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(3.674233, 7.7781725, -2.12132, -2.9999995, 1.4759684e-07, -5.1961513, -3.6742344, 7.778172, 2.1213202, 2, 0, -3.0000005)
 requiredColor = Color(0.85824585, 0.049840085, 0.27681956, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster8" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster8" type="Node3D" parent="." unique_id=588388927]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -21, 2.5, 46)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster8" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster8" unique_id=1765497229 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.598076, -5.500001, 4.5, -5.1961527, -6.4418515e-08, 3, -1.5000002, -9.526279, -2.5980763, -3, 0, -2)
 requiredColor = Color(0.37730792, 0.3364982, 1, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster8" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster8" unique_id=1148409315 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(3.674233, 7.7781725, -2.12132, -2.9999995, 1.4759684e-07, -5.1961513, -3.6742344, 7.778172, 2.1213202, 2, 0, -3.0000005)
 requiredColor = Color(0.37730792, 0.3364982, 1, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster9" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster9" type="Node3D" parent="." unique_id=179844072]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12, 2.5, 67)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster9" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster9" unique_id=1876178451 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-0.34807646, -4.7631416, 5.3971143, -5.799038, 2.7500002, 0.3480765, -1.5000001, -9.5262785, -2.5980763, 2, 0, 0)
 requiredColor = Color(0.6662777, 0.39103043, 4.813075e-07, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster9" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster9" unique_id=570170166 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(5.196151, -4.7683716e-07, -2.9999998, -2.9999995, -1.0142071e-07, -5.1961513, -1.0848084e-06, 10.999996, 3.6891547e-07, 2, 0, -3.0000005)
 requiredColor = Color(0.6662777, 0.39103043, 4.813075e-07, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster4" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster4" type="Node3D" parent="." unique_id=19864679]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -74, 3, 9)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster4" unique_id=1496735439 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.5529143, -4.6444154e-07, 5.795555, 2.5333176e-07, 11, 3.301484e-07, -5.795555, 6.05272e-07, -1.5529143, -2, 0, 0)
 requiredColor = Color(0, 0.4278155, 0.9608336, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster5" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster5" type="Node3D" parent="." unique_id=889356549]
 transform = Transform3D(-0.25881904, -0.9659258, -4.222196e-08, 0, -4.371139e-08, 1, -0.9659258, 0.25881904, 1.131334e-08, -104, 3, -30)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster5" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster5" unique_id=759978520 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.5529143, -4.6444154e-07, 5.795555, 2.5333176e-07, 11, 3.301484e-07, -5.795555, 6.05272e-07, -1.5529143, -2, 0, 0)
 requiredColor = Color(2.4065375e-07, 0.52838224, 0.5844532, 1)
 tolerance = 0.12
 
-[node name="LigthSensetiveWallCluster2" type="Node3D" parent="."]
+[node name="LigthSensetiveWallCluster2" type="Node3D" parent="." unique_id=567468785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2, -33.2)
 
-[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="LigthSensetiveWallCluster2" unique_id=1381166919 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.3113416e-07, -11, -2.2713105e-07, 3, -4.808253e-07, 5.1961527, -5.1961527, 0, 3, -5, 0, 0)
 requiredColor = Color(1, 0.377081, 0.48675406, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="LigthSensetiveWallCluster2" unique_id=1696614659 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(5.7955537, 0, 1.5529143, -0.77645713, 9.526278, 2.8977768, -1.3448632, -5.499999, 5.019097, 2, 0, 0)
 requiredColor = Color(0.9338629, 0.031665992, 0.49465585, 1)
+tolerance = 0.1
 
-[node name="ItemPickUp" parent="LigthSensetiveWallCluster2" instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp" parent="LigthSensetiveWallCluster2" unique_id=222505471 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 8.200001)
 setCrystalLight = Color(0.5802721, 0.73736626, 1, 1)
 
-[node name="ItemPickUp2" parent="LigthSensetiveWallCluster2" instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp2" parent="LigthSensetiveWallCluster2" unique_id=1402148961 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 2, 8.200001)
 setCrystalLight = Color(1, 0.60178614, 0.64195174, 1)
 
-[node name="ItemPickUp3" parent="LigthSensetiveWallCluster2" instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp3" parent="LigthSensetiveWallCluster2" unique_id=580430645 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 2, 41.2)
 setCrystalLight = Color(0.99404734, 0.36166742, 0.5562589, 1)
 
-[node name="CrystalPuzzle" type="Node3D" parent="."]
+[node name="CrystalPuzzle" type="Node3D" parent="." unique_id=414463745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 53)
 
-[node name="LightSensativeDoor4" parent="CrystalPuzzle" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor4" parent="CrystalPuzzle" unique_id=2009811312 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(3.411474, 0.694593, -1.9696157, 2.0000002, -8.7422784e-08, 3.4641016, 0.60153514, -3.939231, -0.34729663, 3.300003, 2.8999999, -4.299999)
 requiredColor = Color(0, 0.79607844, 0.2509804, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor5" parent="CrystalPuzzle" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor5" parent="CrystalPuzzle" unique_id=1570520434 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.5138025, 1.6998013, -2.606045, -2.1906712, 3.3460648, 0.06935052, 2.2094693, 1.3836634, 3.0337632, -2.7000008, 3.3999999, -6.200001)
 requiredColor = Color(0, 0.79607844, 0.2509804, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor" parent="CrystalPuzzle/LightSensativeDoor5" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="CrystalPuzzle/LightSensativeDoor5" unique_id=935009138 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-0.7521981, -0.6284507, -0.19811061, 0.11868611, -0.42495042, 0.89740235, -0.6481603, 0.65151125, 0.39423525, 0.48830605, -0.04445553, 1.708313)
 requiredColor = Color(0, 0.79607844, 0.2509804, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="CrystalPuzzle" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="CrystalPuzzle" unique_id=836025821 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(0.13397446, -1.9318513, 3.5000002, -0.5176381, 3.464102, 1.9318513, -3.9641018, -0.5176381, -0.13397464, -4, 2.3, 3.4000015)
 requiredColor = Color(0, 0.79607844, 0.2509804, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor3" parent="CrystalPuzzle" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor3" parent="CrystalPuzzle" unique_id=336254249 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(0.3748449, -3.405083, 2.0651639, -0.38130045, 2.034075, 3.4230323, -3.9641016, -0.51763844, -0.13397428, 3.0999985, 2.3, 0)
 requiredColor = Color(0, 0.79607844, 0.2509804, 1)
 tolerance = 0.12
 
-[node name="ItemPickUp" parent="CrystalPuzzle" instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp" parent="CrystalPuzzle" unique_id=773834473 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.5, -1)
 setCrystalLight = Color(4.042983e-06, 0.95322126, 0.30747616, 1)
 
-[node name="ItemPickUp2" parent="." instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp2" parent="." unique_id=1203906326 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3.2, -59)
 setCrystalLight = Color(0.18074846, 0.80402565, 0.9999998, 1)
 
-[node name="CrystalPuzzle2" type="Node3D" parent="."]
+[node name="CrystalPuzzle2" type="Node3D" parent="." unique_id=1448319905]
 transform = Transform3D(0.9961947, 0, -0.08715574, 0, 1, 0, 0.08715574, 0, 0.9961947, -107, 4, 45)
 
-[node name="LightSensativeDoor" parent="CrystalPuzzle2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="CrystalPuzzle2" unique_id=134067798 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.9561954, -0.34838742, 2.6719925, -0.6979764, 3.7320502, 1.2588191, -2.6026418, -1.3965758, 2.697376, 0, -1.2, -8)
 requiredColor = Color(0.72452223, 0.42774412, 1, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor2" parent="CrystalPuzzle2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="CrystalPuzzle2" unique_id=2114848707 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.0352762, 0, 3.8637033, 0, 4, 0, -3.8637033, 0, -1.0352762, 7.6293945e-06, -1.4000001, 2)
 requiredColor = Color(0.72452223, 0.42774412, 1, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor3" parent="CrystalPuzzle2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor3" parent="CrystalPuzzle2" unique_id=1772429916 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-2.4494894, 1.1213199, 2.9567957, -2.8284268, -2.4494896, -1.4142138, 1.4142137, -2.9567962, 2.2928927, 3, 0.5, -4)
 requiredColor = Color(0.72452223, 0.42774412, 1, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor4" parent="CrystalPuzzle2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor4" parent="CrystalPuzzle2" unique_id=1181826939 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-2.956197, 0.3483876, -2.6719933, -0.69797647, 3.7320495, 1.258819, 2.6026425, 1.3965766, -2.6973765, -1.8975983, -1.2, 2.6781464)
 requiredColor = Color(0.72452223, 0.42774412, 1, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor5" parent="CrystalPuzzle2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor5" parent="CrystalPuzzle2" unique_id=2016403782 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(1.0352762, 0, -3.8637037, 0, 4, 0, 3.8637037, 0, 1.0352762, -1.8976059, -1.4000001, -7.3218613)
 requiredColor = Color(0.72452223, 0.42774412, 1, 1)
 tolerance = 0.12
 
-[node name="LightSensativeDoor6" parent="CrystalPuzzle2" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor6" parent="CrystalPuzzle2" unique_id=1857810248 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.44949, -1.1213208, -2.956797, -2.8284266, -2.4494894, -1.4142135, -1.4142135, 2.956796, -2.2928925, -4.897606, 0.5, -1.3218575)
 requiredColor = Color(0.72452223, 0.42774412, 1, 1)
 tolerance = 0.12
 
-[node name="ItemPickUp" parent="CrystalPuzzle2" instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp" parent="CrystalPuzzle2" unique_id=381056611 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2576523, 0.19999981, -2.9014282)
 setCrystalLight = Color(0.78547806, 0.58243424, 1, 1)
 
-[node name="KeyHider" type="Node3D" parent="."]
-transform = Transform3D(1.545, 0, 0, 0, 1.5, 0, 0, 0, 1.245, 74, -1, 92)
+[node name="KeyHider" type="Node3D" parent="." unique_id=501132270]
+transform = Transform3D(1.545, 0, 0, 0, 1.5, 0, 0, 0, 1.245, 74, -0.83699656, 92)
 
-[node name="LightSensativeDoor" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="KeyHider" unique_id=2047097660 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-0.5512848, -2.452804e-07, 1.9994649, 3.2162103e-07, -2.3949997, -1.3572385e-07, 2.0574198, 3.0866903e-07, 0.53575546, 0.70549774, 2.9333322, -3.8032303)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor10" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor10" parent="KeyHider" unique_id=2013605665 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.0574198, 3.0866903e-07, 0.5357552, 3.21621e-07, -2.3949988, -1.3572385e-07, 0.5512843, 2.4528018e-07, -1.9994634, -5.1197433, 2.9333317, -4.6064453)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor12" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor12" parent="KeyHider" unique_id=1914584122 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(1.5061353, 1.4467504e-07, 1.4637094, 0.7530678, 2.0741293, -0.73185426, -1.3043516, 1.1974986, 1.2676083, -3.825245, 2.933332, -10.3092575)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor11" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor11" parent="KeyHider" unique_id=1251261306 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.8446313, -3.9170115e-07, 1.0349987, 3.216209e-07, -2.3949988, -1.357238e-07, 1.0649974, 4.4822606e-08, 1.7926697, -3.760521, 2.9333317, -3.4819717)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor7" parent="KeyHider" instance=ExtResource("13_l8jgl")]
-transform = Transform3D(1.1172253, -0.30993524, -1.7419171, -0.75306875, 2.0741303, -0.7318555, 1.649723, 1.1566949, 0.8455807, 4.4404488, 1.7999995, 6.1160507)
+[node name="LightSensativeDoor7" parent="KeyHider" unique_id=1121546898 instance=ExtResource("13_l8jgl")]
+transform = Transform3D(1.1172253, -0.30993524, -1.7419171, -0.75306875, 2.0741303, -0.7318555, 1.6497229, 1.1566948, 0.8455806, 4.4404488, 2.3355153, 6.1160507)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor2" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="KeyHider" unique_id=327974051 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.6621026, 1.4666317, 0.26253134, 1.3043534, 1.6935198, 0.7318555, 0.2701402, 0.8467603, -1.9184271, 7.9417458, 2.3333333, 3.4256973)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor3" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor3" parent="KeyHider" unique_id=643606676 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-2.0574207, -0.3099349, -0.46397662, -1.4505208e-07, -2.0741303, 1.034999, -0.55128384, 1.156694, 1.7315857, -0.3512993, 2.3333316, 3.526657)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor14" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor14" parent="KeyHider" unique_id=733968666 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.1299975, -5.015277e-07, -5.4010667e-07, -1.9248007e-07, -2.0741313, 1.034999, 9.575039e-08, -1.197498, -1.7926697, 3.267414, 2.3333318, -5.1185455)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor15" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor15" parent="KeyHider" unique_id=373037935 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-1.064999, 1.037064, 1.552498, -1.9248007e-07, -2.0741313, 1.034999, 1.8446306, 0.59874827, 0.896334, 0.6784172, 2.3333313, -9.214951)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor8" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor8" parent="KeyHider" unique_id=575209313 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(0.5512848, 1.1566958, 1.7315881, -1.0928444e-07, -2.0741303, 1.0349995, 2.0574205, -0.3099357, -0.46397755, -1.5108871, 2.3333316, -1.3599625)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor13" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor13" parent="KeyHider" unique_id=2104709211 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(0.5512848, 1.1566958, 1.7315881, -1.0928444e-07, -2.0741303, 1.0349995, 2.0574205, -0.3099357, -0.46397755, -2.2228622, 2.3333318, -10.436264)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor9" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor9" parent="KeyHider" unique_id=54139476 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.13, -1.5431614e-07, 2.3147417e-07, -1.4593401e-07, -2.0741303, 1.0349995, 9.575033e-08, -1.1974987, -1.7926706, -0.43967438, 2.3333316, 2.410637)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor16" parent="KeyHider" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor16" parent="KeyHider" unique_id=1805336591 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.13, -1.5431614e-07, 2.3147416e-07, -1.4593401e-07, -2.0741303, 1.0349995, 9.575032e-08, -1.1974986, -1.7926705, 7.9745636, 2.3333313, 0.0009918213)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor17" parent="KeyHider" instance=ExtResource("13_l8jgl")]
-transform = Transform3D(-0.5512844, -1.1566943, -1.7315861, -2.6236966e-08, -2.0741303, 1.0349996, -2.0574214, 0.30993572, 0.46397686, 6.680065, 2.3333313, -4.0150833)
+[node name="LightSensativeDoor17" parent="KeyHider" unique_id=1426962349 instance=ExtResource("13_l8jgl")]
+transform = Transform3D(-0.5512843, -1.1566943, -1.7315859, -2.6236965e-08, -2.0741303, 1.0349995, -2.0574212, 0.3099357, 0.46397683, 6.680065, 2.516989, -4.0150833)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor6" parent="KeyHider" instance=ExtResource("13_l8jgl")]
-transform = Transform3D(-1.109444, 2.0442586, -0.024937259, 1.7304585, 1.1974999, 0.6208969, 0.5581596, 0.35073963, -1.9745275, 7.6718407, 2.3333313, 6.3295364)
+[node name="LightSensativeDoor6" parent="KeyHider" unique_id=1615169275 instance=ExtResource("13_l8jgl")]
+transform = Transform3D(-1.1094439, 2.0442586, -0.024937255, 1.7304585, 1.1974999, 0.6208969, 0.55815953, 0.3507396, -1.9745274, 7.6718407, 2.516989, 6.329529)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor4" parent="KeyHider" instance=ExtResource("13_l8jgl")]
-transform = Transform3D(-0.11159021, -2.2117703, -0.7866273, -2.1020453, 0.25406268, -0.25200227, 0.32533383, 0.8829125, -1.8980514, 1.7540398, 2.0666652, 7.6036377)
+[node name="LightSensativeDoor4" parent="KeyHider" unique_id=1214763686 instance=ExtResource("13_l8jgl")]
+transform = Transform3D(-0.1115902, -2.21177, -0.7866273, -2.1020453, 0.25406268, -0.25200227, 0.3253338, 0.88291246, -1.8980513, 1.7540398, 2.2503226, 7.6036377)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="LightSensativeDoor5" parent="KeyHider" instance=ExtResource("13_l8jgl")]
-transform = Transform3D(-0.55128413, 2.2345653, -0.51749957, 2.057422, 0.59874946, -0.13866355, -3.173945e-08, -0.6198709, -1.9994651, 5.5351257, 2.4333317, 7.1533585)
+[node name="LightSensativeDoor5" parent="KeyHider" unique_id=379623706 instance=ExtResource("13_l8jgl")]
+transform = Transform3D(-0.55128413, 2.2345653, -0.51749957, 2.057422, 0.59874946, -0.13866355, -3.1739447e-08, -0.61987084, -1.9994649, 5.5351257, 2.6169894, 7.153351)
 requiredColor = Color(1.2032688e-06, 0.6875503, 0.07738236, 1)
 tolerance = 0.13
 
-[node name="ItemPickUp3" parent="." instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp3" parent="." unique_id=334501265 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 3.5, -3)
 setCrystalLight = Color(0.3419539, 0.68161845, 0.97760814, 1)
 
-[node name="ItemPickUp5" parent="." instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp5" parent="." unique_id=712885217 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 3.5, 66)
 setCrystalLight = Color(0.9374908, 0, 0.25573084, 1)
 
-[node name="ItemPickUp4" parent="." instance=ExtResource("9_te3t8")]
+[node name="ItemPickUp4" parent="." unique_id=566002688 instance=ExtResource("9_te3t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81, 3.5, -73)
 setCrystalLight = Color(0.91257995, 0.5655873, 0, 1)
 
-[node name="LightSensativeDoor" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor" parent="ItemPickUp4" unique_id=1424646804 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.8977776, 0.5176381, 0, -0.77645713, 1.9318516, 0, 0, 0, 1.5, -1.2318573, -0.28236175, 3)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor2" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor2" parent="ItemPickUp4" unique_id=449451498 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-0.16225174, -1.9055412, 0.44825444, 0.6819173, 0.55933946, 1.3992013, -2.9169621, 0.23675346, 0.302167, 4.668144, 0.5176382, -1.0999985)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor3" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor3" parent="ItemPickUp4" unique_id=839436882 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-0.75, -0.1339746, 1.4488888, -0.77645725, 1.9318519, -3.1610135e-08, -2.7990386, -0.50000006, -0.38822854, 3.165924, -0.2588191, 2)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor4" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor4" parent="ItemPickUp4" unique_id=563842635 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(1.4488888, 0.25881904, 1.2990384, -0.77645713, 1.9318516, 0, -2.5095491, -0.44828776, 0.74999994, 0.8977814, -0.7764571, 3)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor5" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor5" parent="ItemPickUp4" unique_id=1828414739 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-2.389337, -0.42681408, 0.8487029, -0.7764572, 1.9318519, -1.6362604e-08, -1.6395686, -0.2928807, -1.2368118, 2.2460022, -0.8823619, -2.2858505)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor6" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor6" parent="ItemPickUp4" unique_id=694824486 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(0.91168857, 1.7793355, -0.51118714, 0.6819175, 0.5593395, 1.3992016, 2.775576, -0.721877, -0.17585418, -3.0918045, 0.5176382, 2.1766586)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor7" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor7" parent="ItemPickUp4" unique_id=1002229776 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(2.7354083, 0.55363536, -1.36, -0.84633815, 2.3858366, 1.535897e-07, 1.5792887, 0.31964147, 2.355589, -2.4431076, -1.2588191, -2.20652)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="LightSensativeDoor8" parent="ItemPickUp4" instance=ExtResource("13_l8jgl")]
+[node name="LightSensativeDoor8" parent="ItemPickUp4" unique_id=163621832 instance=ExtResource("13_l8jgl")]
 transform = Transform3D(-0.74999964, -0.2019666, -2.1008885, -0.7764569, 2.9122665, -1.02880755e-07, 2.7990384, 0.75374985, -0.5629312, 1.3889236, -0.7764571, -3.7594833)
 requiredColor = Color(0.83934975, 0.51712704, 0, 1)
+tolerance = 0.1
 
-[node name="IntroCrystal" parent="." instance=ExtResource("9_te3t8")]
+[node name="IntroCrystal" parent="." unique_id=787220536 instance=ExtResource("9_te3t8")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 3.5999994, 84)
 setCrystalLight = Color(8.711666e-06, 0.79755473, 0.09699523, 1)
 
-[node name="PostProcess" type="CanvasLayer" parent="."]
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1144022440]
 layer = 2
 
-[node name="ColorRect" type="ColorRect" parent="PostProcess"]
+[node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=153548088]
 material = SubResource("ShaderMaterial_5uqhi")
 anchors_preset = 15
 anchor_right = 1.0
@@ -428,5 +438,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="UI" parent="." instance=ExtResource("9_p0c0f")]
+[node name="UI" parent="." unique_id=931389074 instance=ExtResource("9_p0c0f")]
 layer = 3
