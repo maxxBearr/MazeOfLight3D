@@ -1,32 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://btaqqfe72s0ng"]
+[gd_scene load_steps=5 format=3 uid="uid://btaqqfe72s0ng"]
 
 [ext_resource type="Script" uid="uid://bp1vhhorebw47" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://dnvbetocs5gmc" path="res://lantern/Lantern.tscn" id="2_btcbx"]
-[ext_resource type="PackedScene" uid="uid://rs6ltlmva8kc" path="res://Character/UAL1.glb" id="2_gwnis"]
+[ext_resource type="PackedScene" uid="uid://d0pwouc6rjyrs" path="res://Character/RiggedAnimChar.tscn" id="4_gwnis"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_l8h54"]
 radius = 0.7
-height = 2.3
+height = 3.5
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_4ntmi")
 SPEED = 9.455
 ROTATION_SPEED = 8.545
 
-[node name="UAL1" parent="." instance=ExtResource("2_gwnis")]
+[node name="RiggedAnimChar" parent="." instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_hvfyp")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_l8h54")
-skeleton = NodePath("../..")
-
 [node name="Lantern" parent="." instance=ExtResource("2_btcbx")]
-transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.087155774, 0, -0.087155774, 0.9961947, 1.4, -0.5, 0.20000005)
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.087155774, 0, -0.087155774, 0.9961947, 0.099999905, 1.1, 1.2)
 energy = 4.019
 angle = 19
 lightRange = 8.217

@@ -7,13 +7,26 @@ extends CharacterBody3D
 @export var currentHealth : int
 @onready var camera : Camera3D = get_viewport().get_camera_3d()
 @onready var omni_light_3d: OmniLight3D = %OmniLight3D
-@onready var animPlayer = %UAL1/AnimationPlayer
+@onready var animTree = %RiggedAnimChar/AnimationTree
+@onready var stateMachine = animTree.get("parameters/StateMachine/playback")
+@onready var animPlayer = %RiggedAnimChar/AnimationPlayer
+var currentAnim = ""
 
 signal healthChanged(newHealth:int)
 func _ready() -> void:
 	EnemyManager.registerPlayer(self)
 	UImanager.registerPlayer(self)
 	currentHealth = maxhealth
+   
+	# Make sure AnimationTree is set up
+	print("AnimTree anim_player: ", animTree.anim_player)
+	print("AnimTree root node: ", animTree.get("root_node"))
+	animTree.active = true
+	
+	print("All parameters:")
+	for prop in animTree.get_property_list():
+		if prop.name.begins_with("parameters/"):
+			print("  ", prop.name)
 
 
 func _physics_process(delta: float) -> void:
@@ -35,34 +48,41 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		playAnimation("Idle")
 	
 
 	move_and_slide()
 	
 
 func updateAnimation(localDir:Vector3):
-	# local_dir.z > 0 means moving forward (relative to facing)
-	# local_dir.z < 0 means moving backward
-	# local_dir.x tells you left/right
-	if abs(localDir.z) > abs(localDir.x):
-		#Primarily forward/backwards
-		if localDir.z > 0:
-			playAnimation("Jog_Fwd") #forwad
+	var forwardBack = localDir.z
+	var leftRight = localDir.x
+	
+	var isDiagonal : bool = abs(forwardBack) > 0.3 and abs(leftRight) > 0.3
+	
+	if isDiagonal and forwardBack < 0:
+		if leftRight > 0:
+			playAnimation("Jog_Bwd_R")
 		else:
-			playAnimation("Jog_Bwd") #back
-	else: 
-		#strafing
-		if localDir.x > 0:
-			playAnimation("Jog_Right") # right
+			playAnimation("Jog_Bwd_L")
+	elif abs(forwardBack) > abs(leftRight):
+		if forwardBack>0:
+			playAnimation("Jog_Fwd")
 		else:
-			playAnimation("Jog_Left") #left
+			playAnimation("Jog_Bwd")
+	else:
+		if leftRight > 0:
+			playAnimation("Jog_Right")
+		else:
+			playAnimation("Jog_Left")
 
 
-
-func playAnimation(animName : String):
-	if animPlayer.current_animation != animName:
-		animPlayer.play(animName)
-
+func playAnimation(animName: String) -> void:
+	if currentAnim != animName:
+		currentAnim = animName
+		animTree.set("parameters/Transition/transition_request", animName)
+		print("PlayingP: ", animName)
+		
 func takeDamage(amount: int):
 	currentHealth -= amount
 	healthChanged.emit(currentHealth)
