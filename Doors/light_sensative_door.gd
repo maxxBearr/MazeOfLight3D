@@ -9,9 +9,11 @@ extends Node3D
 var reapperTimer : float =0.0
 var waitingToReapear : bool= false
 @export var tolerance := 0.1
+var basePosition : Vector3
+var shutterTween = Tween
 
 func _ready() -> void:
-	pass
+	basePosition = global_position
 
 func _physics_process(delta: float) -> void:
 	if LanternManager.isInCone(global_position) == true:
@@ -20,10 +22,12 @@ func _physics_process(delta: float) -> void:
 		var lightHue = LanternManager.getCurrentColor().h 
 		var directDist = abs(lightHue - requiredColor.h)
 		var wrapDist = 1.0 - directDist
-		var shorestDist = min(directDist, wrapDist)
-		if shorestDist <= tolerance:
+		var shortestDist = min(directDist, wrapDist)
+		updateShutterIntensity(shortestDist)
+		if shortestDist <= tolerance:
 					makeDoorDisapear()
 	else:
+		stopShutter()
 		if player_collision.disabled == true:
 			if not waitingToReapear:
 				waitingToReapear = true
@@ -45,8 +49,24 @@ func makeDoorDisapear():
 			#print("player collsion disabled"))
 
 func makeDoorReappear():
+	#CHECK TO SEE IF PLAYER IS IN ZONE FIRST
 	player_collision.disabled = false
 	var tween = create_tween()
 	tween.tween_property(door_01,"transparency", 0.3, 0.2)
 	door_01.ignore_occlusion_culling = true
 	#print("door reappeared")
+
+func startJitterTween(jitterAmount:float, speed:float):
+	pass
+
+
+func updateShutterIntensity(hueDistance: float):
+	var maxDistance = 0.5
+	var jitterAmount = remap(hueDistance, 0.0, maxDistance, 0.3, 0.05)
+
+
+func stopShutter():
+	if shutterTween:
+		shutterTween.kill()
+		shutterTween = null
+	position = basePosition
