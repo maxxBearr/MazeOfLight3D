@@ -11,13 +11,14 @@ extends CharacterBody3D
 @onready var stateMachine = animTree.get("parameters/StateMachine/playback")
 @onready var animPlayer = %RiggedAnimChar/AnimationPlayer
 var currentAnim = ""
+@onready var footsteps: AudioStreamPlayer3D = %Footsteps
 
 signal healthChanged(newHealth:int)
 func _ready() -> void:
+	
 	EnemyManager.registerPlayer(self)
 	UImanager.registerPlayer(self)
 	currentHealth = maxhealth
-   
 	# Make sure AnimationTree is set up
 	print("AnimTree anim_player: ", animTree.anim_player)
 	print("AnimTree root node: ", animTree.get("root_node"))
@@ -50,7 +51,11 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		playAnimation("Idle")
 	
-
+	if velocity.length() > 0.1:
+		if footsteps.playing == false:
+			footsteps.play()
+	else:
+		footsteps.stop()
 	move_and_slide()
 	
 
@@ -59,7 +64,7 @@ func updateAnimation(localDir:Vector3):
 	var leftRight = localDir.x
 	
 	var isDiagonal : bool = abs(forwardBack) > 0.3 and abs(leftRight) > 0.3
-	
+
 	if isDiagonal and forwardBack < 0:
 		if leftRight > 0:
 			playAnimation("Jog_Bwd_R")

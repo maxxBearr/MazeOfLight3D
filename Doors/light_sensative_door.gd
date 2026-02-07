@@ -47,7 +47,7 @@ func makeDoorDisapear():
 		tween.finished.connect(func():
 			player_collision.disabled = true
 			door_01.ignore_occlusion_culling = true )
-			#print("player collsion disabled"))
+			#print("player collsion disabled")
 
 func makeDoorReappear():
 	player_collision.disabled = false
@@ -69,8 +69,8 @@ func startJitterTween(jitterAmount:float, speed:float):
 
 func updateShutterIntensity(hueDistance: float):
 	var maxDistance = 0.5
-	var jitterAmount = remap(hueDistance, 0.0, maxDistance, 0.32, 0.05)
-	var shutterSpeed = remap(hueDistance, 0.0, maxDistance, 0.05, 0.3)
+	var jitterAmount = remap(hueDistance, 0.0, maxDistance, 0.4, 0.05)
+	var shutterSpeed = remap(hueDistance, 0.0, maxDistance, 0.05, 0.35)
 	
 	startJitterTween(jitterAmount, shutterSpeed)
 

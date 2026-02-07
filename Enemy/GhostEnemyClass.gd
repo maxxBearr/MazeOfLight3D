@@ -14,8 +14,11 @@ extends Area3D
 @onready var omni_light_3d: OmniLight3D = $OmniLight3D
 @export var damageLabelScene : PackedScene 
 var labelCooldown :float = 0.0
+@onready var death_sound: AudioStreamPlayer3D = %DeathSound
+@onready var deal_damage_sound: AudioStreamPlayer3D = %DealDamageSound
 
 var startingHealth
+@onready var basic_sound: AudioStreamPlayer3D = %BasicSound
 
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
@@ -23,6 +26,7 @@ func _ready() -> void:
 	var ownLight : OmniLight3D = self.get_node("OmniLight3D")
 	ownLight.light_color = inherentColor
 	syncShaderToInherentColor()
+	basic_sound.play()
 
 func _physics_process(delta: float) -> void:
 	var playerPOS = EnemyManager.getPlayerPosition()
@@ -33,14 +37,23 @@ func _physics_process(delta: float) -> void:
 		takeDamage(delta)
 		print(health)
 	if health <= 0:
-		death()
-
+		set_physics_process(false)
+		var tween = create_tween()
+		tween.tween_property(get_node("GhostMesh"), "transparency", 1.0,1.0)
+		basic_sound.stop()
+		death_sound.play()
+		death_sound.finished.connect(death)
+	
 
 func onBodyEntered(body):
 	print("hit:", body)
 	if body is Player:
+		var tween = create_tween()
+		tween.tween_property(get_node("GhostMesh"), "transparency", 1.0,1.0)
 		body.takeDamage(damage) 
-		death()
+		deal_damage_sound.play()
+		deal_damage_sound.finished.connect(death)
+	
 
 
 func death ():
@@ -85,7 +98,7 @@ func takeDamage(delta: float):
 	labelCooldown -= delta
 	if labelCooldown <= 0.0:
 		spawnDamageLabel(totalDamage, damageColor)
-		labelCooldown = 0.1
+		labelCooldown = 0.23
 	print(cDamage)
 
 
@@ -93,5 +106,5 @@ func spawnDamageLabel(amount : int, color : Color):
 	var label = damageLabelScene.instantiate()
 	get_tree().root.add_child(label)
 	label.global_position = global_position + Vector3(0,1,0)
-	label.text = str(snapped(amount, 0.01))
+	label.text = "-" + str(snapped(amount, 0.01))
 	label.modulate = color

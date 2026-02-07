@@ -1,29 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://btaqqfe72s0ng"]
+[gd_scene format=3 uid="uid://btaqqfe72s0ng"]
 
 [ext_resource type="Script" uid="uid://bp1vhhorebw47" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="PackedScene" uid="uid://dnvbetocs5gmc" path="res://lantern/Lantern.tscn" id="2_btcbx"]
 [ext_resource type="PackedScene" uid="uid://d0pwouc6rjyrs" path="res://Character/RiggedAnimChar.tscn" id="4_gwnis"]
+[ext_resource type="AudioStream" uid="uid://dnmlienluenp6" path="res://Sounds/PlayerSounds/Foley Footstep Hard Sole Run On Cement 01.wav" id="4_k53q1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
 radius = 0.7
 height = 3.5
 
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
+[node name="Player" type="CharacterBody3D" unique_id=126136061 groups=["Player"]]
 script = ExtResource("1_4ntmi")
 SPEED = 9.455
 ROTATION_SPEED = 8.545
 
-[node name="RiggedAnimChar" parent="." instance=ExtResource("4_gwnis")]
+[node name="RiggedAnimChar" parent="." unique_id=1422451749 instance=ExtResource("4_gwnis")]
 unique_name_in_owner = true
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1265800060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_hvfyp")
 
-[node name="Lantern" parent="." instance=ExtResource("2_btcbx")]
+[node name="Lantern" parent="." unique_id=1751728566 instance=ExtResource("2_btcbx")]
 transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.087155774, 0, -0.087155774, 0.9961947, 0.099999905, 1.1, 1.2)
 energy = 4.019
 angle = 19
 lightRange = 8.217
 damageMutliplier = 8.0
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=32311265]
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="." unique_id=1841095666]
+unique_name_in_owner = true
+stream = ExtResource("4_k53q1")
+bus = &"PlayerBus"

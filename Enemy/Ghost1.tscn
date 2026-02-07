@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://clojm02e44vuu"]
+[gd_scene format=3 uid="uid://clojm02e44vuu"]
 
 [ext_resource type="Script" uid="uid://dbksp6isc32e6" path="res://Enemy/Ghost.gd" id="1_d4t3c"]
 [ext_resource type="ArrayMesh" uid="uid://dafsg0iwctx3x" path="res://Enemy/GhostImport/GhostMesh.tres" id="2_b7kls"]
 [ext_resource type="PackedScene" uid="uid://djyrj81bxqlsy" path="res://Enemy/damage_label.tscn" id="2_kcclt"]
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="3_o8pi0"]
 [ext_resource type="Texture2D" uid="uid://cadnxe0bt1tax" path="res://Enemy/GhostImport/Ghost_Opacity.tga.png" id="4_o8pi0"]
+[ext_resource type="AudioStream" uid="uid://cox2lmkxisgq1" path="res://Sounds/Ghost/GhostAmbientSound.wav" id="6_26sax"]
+[ext_resource type="AudioStream" uid="uid://d3fnfhk4y5u44" path="res://Sounds/Ghost/GhostDieSound.wav" id="7_1eprb"]
+[ext_resource type="AudioStream" uid="uid://bj4lwfrjg0cc8" path="res://Sounds/Ghost/HitPlayerSound.wav" id="8_56am7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jckng"]
 render_priority = 0
@@ -16,7 +19,7 @@ shader_parameter/min_brightness = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jsjij"]
 
-[node name="Ghost1" type="Area3D"]
+[node name="Ghost1" type="Area3D" unique_id=2135367451]
 script = ExtResource("1_d4t3c")
 speed = 4.29
 inherentColor = Color(1, 0.348638, 0.6328528, 1)
@@ -25,18 +28,18 @@ rangeResistance = 13.825
 angleResistance = 18.625
 damageLabelScene = ExtResource("2_kcclt")
 
-[node name="GhostMesh" type="MeshInstance3D" parent="."]
+[node name="GhostMesh" type="MeshInstance3D" parent="." unique_id=1547657922]
 unique_name_in_owner = true
 transform = Transform3D(-3.141, 0, -4.742778e-07, 0, 3.141, 0, 4.742778e-07, 0, -3.141, 0, 2, 0)
 transparency = 0.8
 mesh = ExtResource("2_b7kls")
 surface_material_override/0 = SubResource("ShaderMaterial_jckng")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1795574169]
 transform = Transform3D(3.141, 0, 0, 0, 3.141, 0, 0, 0, 3.141, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_jsjij")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1126617171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 visible = false
 light_energy = 0.806
@@ -44,3 +47,18 @@ light_indirect_energy = 0.609
 light_volumetric_fog_energy = 0.557
 omni_range = 1.596
 omni_attenuation = 0.635
+
+[node name="BasicSound" type="AudioStreamPlayer3D" parent="." unique_id=1121055731]
+unique_name_in_owner = true
+stream = ExtResource("6_26sax")
+bus = &"EnemyBus"
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="." unique_id=1803900954]
+unique_name_in_owner = true
+stream = ExtResource("7_1eprb")
+bus = &"EnemyBus"
+
+[node name="DealDamageSound" type="AudioStreamPlayer3D" parent="." unique_id=1314831641]
+unique_name_in_owner = true
+stream = ExtResource("8_56am7")
+bus = &"EnemyBus"
