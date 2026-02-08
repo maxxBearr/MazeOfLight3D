@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="2_fueea"]
 [ext_resource type="ArrayMesh" uid="uid://ccbsw8twn30jt" path="res://Environment/Rocks/Rocks4.tres" id="2_m2l1p"]
 [ext_resource type="Texture2D" uid="uid://ch65kpv4vcv3f" path="res://Environment/Rocks/Rocks_0.png" id="4_fueea"]
+[ext_resource type="AudioStream" uid="uid://dr17st7ees6rd" path="res://Sounds/Environment/RocksRumble1.mp3" id="5_dij2l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dij2l"]
 render_priority = 0
@@ -48,3 +49,8 @@ collision_mask = 4
 unique_name_in_owner = true
 transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0.013845622)
 shape = SubResource("CylinderShape3D_fueea")
+
+[node name="RumbleRockSound" type="AudioStreamPlayer3D" parent="." unique_id=246413412]
+unique_name_in_owner = true
+stream = ExtResource("5_dij2l")
+volume_db = -30.0

@@ -18,6 +18,10 @@ config/name="MazeOfLight3d"
 run/main_scene="uid://jp7ileg06mn7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="uid://2e757y7udkoy"
+
 [autoload]
 
 GameEvents="*res://Globals/gameEvents.gd"

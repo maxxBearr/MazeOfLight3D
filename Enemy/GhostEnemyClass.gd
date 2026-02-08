@@ -16,7 +16,9 @@ extends Area3D
 var labelCooldown :float = 0.0
 @onready var death_sound: AudioStreamPlayer3D = %DeathSound
 @onready var deal_damage_sound: AudioStreamPlayer3D = %DealDamageSound
-
+@onready var take_damage_sound: AudioStreamPlayer3D = %TakeDamageSound
+var totalDamage : float
+var takingDaming : bool 
 var startingHealth
 @onready var basic_sound: AudioStreamPlayer3D = %BasicSound
 
@@ -34,12 +36,17 @@ func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta
 	look_at(playerPOS)
 	if LanternManager.isInCone(global_position) == true:
+		takingDaming = true
 		takeDamage(delta)
 		print(health)
+	else:
+		takingDaming = false
+		stopTakeDamageSound()
 	if health <= 0:
 		set_physics_process(false)
 		var tween = create_tween()
 		tween.tween_property(get_node("GhostMesh"), "transparency", 1.0,1.0)
+		takingDaming = false
 		basic_sound.stop()
 		death_sound.play()
 		death_sound.finished.connect(death)
@@ -78,7 +85,6 @@ func takeDamage(delta: float):
 	var tolerance = 0.1
 	var cDamage 
 	var damageMult = LanternManager.currentLantern.damageMutliplier
-	var totalDamage : float
 	var damageColor : Color
 	if shorestDist >= tolerance:
 		if shorestDist < 0.62 and shorestDist > 0.38:
@@ -94,12 +100,29 @@ func takeDamage(delta: float):
 		health -= ((eDamage + rDamage + aDamage + cDamage) * 0.4 * damageMult) * delta
 		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * 0.4 * damageMult) * delta
 		damageColor = Color.RED
-	
+	updateTakeDamageSound(totalDamage)
 	labelCooldown -= delta
 	if labelCooldown <= 0.0:
 		spawnDamageLabel(totalDamage, damageColor)
 		labelCooldown = 0.23
 	print(cDamage)
+
+
+func updateTakeDamageSound(damageAmount:float):
+	print("Updating sound - damage: ", damageAmount, " playing: ", take_damage_sound.playing)
+	if take_damage_sound.playing == false:
+		take_damage_sound.play()
+	var minDamage = 0.0
+	var maxDamage = 3.0
+	var intensity = remap(damageAmount, minDamage, maxDamage, 0.0, 1.0)
+	take_damage_sound.pitch_scale = lerp(1.0, 2.7, intensity)
+	take_damage_sound.volume_db = lerp(-6.0, 0.0, intensity)
+	
+	
+	
+func stopTakeDamageSound():
+	if take_damage_sound.playing:
+			take_damage_sound.stop()
 
 
 func spawnDamageLabel(amount : int, color : Color):

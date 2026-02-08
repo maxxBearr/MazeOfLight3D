@@ -11,6 +11,9 @@ var waitingToReapear : bool= false
 @export var tolerance := 0.1
 var basePosition : Vector3
 var shutterTween : Tween
+@onready var rumble_rock_sound: AudioStreamPlayer3D = %RumbleRockSound
+var doorGone := false
+
 
 func _ready() -> void:
 	basePosition = position
@@ -23,10 +26,15 @@ func _physics_process(delta: float) -> void:
 		var directDist = abs(lightHue - requiredColor.h)
 		var wrapDist = 1.0 - directDist
 		var shortestDist = min(directDist, wrapDist)
-		updateShutterIntensity(shortestDist)
+		if doorGone == false:
+			updateRockSound(shortestDist)
+			updateShutterIntensity(shortestDist)
+		
+		
 		if shortestDist <= tolerance:
-					makeDoorDisapear()
+				makeDoorDisapear()
 	else:
+		stopRockSound()
 		stopShutter()
 		if player_collision.disabled == true:
 			if not waitingToReapear:
@@ -42,6 +50,9 @@ func _physics_process(delta: float) -> void:
 
 func makeDoorDisapear():
 	if player_collision.disabled == false:
+		doorGone = true
+		stopRockSound()
+		stopShutter()
 		var tween = create_tween()
 		tween.tween_property(door_01, "transparency", 1.0,0.3)
 		tween.finished.connect(func():
@@ -52,6 +63,7 @@ func makeDoorDisapear():
 func makeDoorReappear():
 	player_collision.disabled = false
 	stopShutter()
+	doorGone = false
 	var tween = create_tween()
 	tween.tween_property(door_01,"transparency", 0.3, 0.2)
 	door_01.ignore_occlusion_culling = true
@@ -73,6 +85,22 @@ func updateShutterIntensity(hueDistance: float):
 	var shutterSpeed = remap(hueDistance, 0.0, maxDistance, 0.05, 0.35)
 	
 	startJitterTween(jitterAmount, shutterSpeed)
+
+func updateRockSound(hueDistance: float):
+	if rumble_rock_sound.playing == false:
+		if door_01.transparency < 0.8:
+			rumble_rock_sound.play()
+			var audioLenght = rumble_rock_sound.stream.get_length()
+			var randomStart = randf_range(0.0, audioLenght)
+			rumble_rock_sound.seek(randomStart)
+	
+	var intensity = remap(hueDistance,0.4, 0.05, 0.0, 1.0 )
+	rumble_rock_sound.pitch_scale = lerp(1.0,4.0,intensity)
+	rumble_rock_sound.volume_db = lerp(-30.0, -20.0, intensity)
+	
+func stopRockSound():
+	if rumble_rock_sound.playing:
+		rumble_rock_sound.stop()
 
 
 func stopShutter():

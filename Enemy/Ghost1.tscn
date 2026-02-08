@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cox2lmkxisgq1" path="res://Sounds/Ghost/GhostAmbientSound.wav" id="6_26sax"]
 [ext_resource type="AudioStream" uid="uid://d3fnfhk4y5u44" path="res://Sounds/Ghost/GhostDieSound.wav" id="7_1eprb"]
 [ext_resource type="AudioStream" uid="uid://bj4lwfrjg0cc8" path="res://Sounds/Ghost/HitPlayerSound.wav" id="8_56am7"]
+[ext_resource type="AudioStream" uid="uid://beeo7uo02k3xn" path="res://Sounds/Environment/GhostBurn2.wav" id="9_1eprb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jckng"]
 render_priority = 0
@@ -51,14 +52,24 @@ omni_attenuation = 0.635
 [node name="BasicSound" type="AudioStreamPlayer3D" parent="." unique_id=1121055731]
 unique_name_in_owner = true
 stream = ExtResource("6_26sax")
+volume_db = -2.0
+unit_size = 8.56
+max_db = 1.7
 bus = &"EnemyBus"
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="." unique_id=1803900954]
 unique_name_in_owner = true
 stream = ExtResource("7_1eprb")
+unit_size = 11.0
 bus = &"EnemyBus"
 
 [node name="DealDamageSound" type="AudioStreamPlayer3D" parent="." unique_id=1314831641]
 unique_name_in_owner = true
 stream = ExtResource("8_56am7")
 bus = &"EnemyBus"
+
+[node name="TakeDamageSound" type="AudioStreamPlayer3D" parent="." unique_id=623308641]
+unique_name_in_owner = true
+stream = ExtResource("9_1eprb")
+volume_db = -6.0
+pitch_scale = 2.7

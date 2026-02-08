@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cxbhubqu1f3ub"]
+[gd_scene format=3 uid="uid://cxbhubqu1f3ub"]
 
 [ext_resource type="Script" uid="uid://dhu4603n35la1" path="res://Items/crystal_select.gd" id="1_7lfsd"]
 [ext_resource type="PackedScene" uid="uid://nb1n07xus7be" path="res://Items/CrystalModels/crystal_5.fbx" id="1_qcxqk"]
@@ -2596,70 +2596,70 @@ _data = {
 &"Reset": SubResource("Animation_eehhh")
 }
 
-[node name="CrystalSelect" type="Node3D"]
+[node name="CrystalSelect" type="Node3D" unique_id=1965200243]
 process_mode = 3
 script = ExtResource("1_7lfsd")
 possibleItems = Array[ExtResource("2_5lmpe")]([ExtResource("3_tjnak"), ExtResource("4_jtyqc"), ExtResource("5_eehhh"), ExtResource("6_eehhh")])
 
-[node name="Selectable1" type="MeshInstance3D" parent="."]
+[node name="Selectable1" type="MeshInstance3D" parent="." unique_id=141536215]
 unique_name_in_owner = true
 transform = Transform3D(0.24999997, 0.45422754, 0.93301255, -0.0669873, 1.6952001, -0.25, -0.9659257, 1.3075771e-08, 0.258819, 2, 1, 0)
 transparency = 0.12
 mesh = ExtResource("6_5lmpe")
 
-[node name="Option1Area" type="Area3D" parent="Selectable1"]
+[node name="Option1Area" type="Area3D" parent="Selectable1" unique_id=744169215]
 transform = Transform3D(0.9999998, -2.7983234e-08, -4.4703484e-08, -2.050344e-09, 0.99999994, -1.4351773e-08, 0, 1.14908385e-08, 0.9999999, 0.16506359, 3.0468748, 0.6160259)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Selectable1/Option1Area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selectable1/Option1Area" unique_id=1236149406]
 transform = Transform3D(0.99999994, -1.3701218e-08, -1.4901161e-08, 7.450581e-09, 1, 1.4901161e-08, -4.4703484e-08, 1.11045594e-07, 0.9999999, -0.6589251, 1.6659019, -0.5272883)
 shape = SubResource("CapsuleShape3D_qcxqk")
 
-[node name="Selectable2" type="MeshInstance3D" parent="."]
+[node name="Selectable2" type="MeshInstance3D" parent="." unique_id=596504686]
 unique_name_in_owner = true
 transform = Transform3D(0.8660254, -0.49999997, -8.881784e-16, 0.5, 0.8660253, 8.881784e-16, 3.2509585e-16, -1.2132742e-15, 1, -4, 7, 2)
 transparency = 0.13
 mesh = ExtResource("7_tjnak")
 
-[node name="Option2Area" type="Area3D" parent="Selectable2"]
+[node name="Option2Area" type="Area3D" parent="Selectable2" unique_id=1449444128]
 transform = Transform3D(1, -5.9604645e-08, -1.2904784e-08, 0, 1, 7.450581e-09, 0, 0, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Selectable2/Option2Area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selectable2/Option2Area" unique_id=14757785]
 transform = Transform3D(0.99999994, 0, 1.4901163e-08, 0, 1, -4.247373e-08, -1.4901161e-08, 4.2473744e-08, 0.9999999, -0.22057652, 1.1507683, 0.3000002)
 shape = SubResource("CapsuleShape3D_7lfsd")
 
-[node name="Selectable3" type="MeshInstance3D" parent="."]
+[node name="Selectable3" type="MeshInstance3D" parent="." unique_id=2008813620]
 unique_name_in_owner = true
 transform = Transform3D(-1, 1.0779758e-07, -1.4585073e-07, 1.3113413e-07, 1.0770072, -0.258819, 1.1585851e-07, -0.28858322, -0.96592575, 0, 4, -2)
 transparency = 0.12
 mesh = ExtResource("6_5lmpe")
 
-[node name="Option3Area" type="Area3D" parent="Selectable3"]
+[node name="Option3Area" type="Area3D" parent="Selectable3" unique_id=593059350]
 transform = Transform3D(1, 2.8689506e-08, -1.07070605e-07, -2.8689504e-08, 1, 0, 1.0707059e-07, -2.9802322e-08, 1, -1.3113419e-07, 7.827031, 2.5881917)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Selectable3/Option3Area"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selectable3/Option3Area" unique_id=506952251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -4.4904847, -2.5188398)
 shape = SubResource("CapsuleShape3D_delg3")
 
-[node name="crystal_16" parent="." instance=ExtResource("4_kwavh")]
+[node name="crystal_16" parent="." unique_id=509429960 instance=ExtResource("4_kwavh")]
 
-[node name="crystal_17" parent="." instance=ExtResource("4_kwavh")]
+[node name="crystal_17" parent="." unique_id=2098181117 instance=ExtResource("4_kwavh")]
 
-[node name="crystal_18" parent="." instance=ExtResource("5_snbjm")]
+[node name="crystal_18" parent="." unique_id=548979390 instance=ExtResource("5_snbjm")]
 transform = Transform3D(0.9330128, 0.08709682, -0.34914386, -0.25881907, 0.83651644, -0.48296294, 0.25, 0.5409757, 0.8030226, 0, 2, 2)
 
-[node name="crystal_20" parent="." instance=ExtResource("5_snbjm")]
+[node name="crystal_20" parent="." unique_id=745625553 instance=ExtResource("5_snbjm")]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, -2, 1, 2)
 
-[node name="crystal_7" parent="." instance=ExtResource("5_snbjm")]
+[node name="crystal_7" parent="." unique_id=1104229321 instance=ExtResource("5_snbjm")]
 transform = Transform3D(-4.371139e-08, 0.5, 0.8660254, 0, 0.8660254, -0.5, -1, -2.1855694e-08, -3.7855173e-08, 0, 4, -1)
 
-[node name="crystal_19" parent="." instance=ExtResource("5_snbjm")]
+[node name="crystal_19" parent="." unique_id=97037484 instance=ExtResource("5_snbjm")]
 transform = Transform3D(-4.371139e-08, -0.5, -0.8660254, 0, 0.8660254, -0.5, 1, -2.1855694e-08, -3.7855173e-08, -3, 1, 2)
 
-[node name="crystal_6" parent="." instance=ExtResource("1_qcxqk")]
+[node name="crystal_6" parent="." unique_id=260867328 instance=ExtResource("1_qcxqk")]
 transform = Transform3D(0.8365162, -0.48296297, -0.258819, 0.5, 0.8660254, 5.4542024e-09, 0.22414385, -0.12940954, 0.96592575, 0, 1, -2)
 
-[node name="CrystalSelectLight" type="SpotLight3D" parent="."]
+[node name="CrystalSelectLight" type="SpotLight3D" parent="." unique_id=2027253360]
 unique_name_in_owner = true
 transform = Transform3D(0.9659259, -0.15213002, 0.20938902, 0, 0.809017, 0.58778524, -0.25881907, -0.56775695, 0.7814504, 6, 17, 15)
 light_energy = 4.672
@@ -2669,7 +2669,7 @@ light_specular = 17.403
 spot_range = 27.594
 spot_angle = 31.7
 
-[node name="CrystalSelectLight2" type="SpotLight3D" parent="."]
+[node name="CrystalSelectLight2" type="SpotLight3D" parent="." unique_id=1581632812]
 unique_name_in_owner = true
 transform = Transform3D(0.92050487, 0.22689871, -0.31810027, 0, 0.8141155, 0.58070296, 0.39073113, -0.5345399, 0.7493973, -9, 18, 13)
 light_energy = 4.672
@@ -2679,7 +2679,7 @@ light_specular = 17.403
 spot_range = 20.273
 spot_angle = 29.3
 
-[node name="CrystalSelectLight3" type="SpotLight3D" parent="."]
+[node name="CrystalSelectLight3" type="SpotLight3D" parent="." unique_id=1335319132]
 unique_name_in_owner = true
 transform = Transform3D(0.92050487, 0.36598697, -0.1368369, -0.10112865, 0.561431, 0.82132107, 0.37741727, -0.74219185, 0.5538118, -2, 18, 3)
 light_energy = 4.672
@@ -2689,13 +2689,13 @@ light_specular = 17.403
 spot_range = 18.02
 spot_angle = 25.4
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1165105114]
 unique_name_in_owner = true
 process_mode = 3
 layer = 3
 visible = false
 
-[node name="Item2" type="Label" parent="CanvasLayer"]
+[node name="Item2" type="Label" parent="CanvasLayer" unique_id=1516051243]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_right = 1.0
@@ -2707,7 +2707,7 @@ offset_bottom = -377.7201
 text = "Item 2"
 metadata/_edit_use_anchors_ = true
 
-[node name="Item3" type="Label" parent="CanvasLayer"]
+[node name="Item3" type="Label" parent="CanvasLayer" unique_id=1149309733]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -2721,7 +2721,7 @@ grow_vertical = 2
 text = "Item 3"
 metadata/_edit_use_anchors_ = true
 
-[node name="Item1" type="Label" parent="CanvasLayer"]
+[node name="Item1" type="Label" parent="CanvasLayer" unique_id=1842729141]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -2735,11 +2735,15 @@ grow_vertical = 2
 text = "Item 1"
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_7vp4p")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=645613816]
+libraries/ = SubResource("AnimationLibrary_7vp4p")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer" unique_id=1880155011]
+volume_db = -10.0
+pitch_scale = 0.9
+bus = &"PlayerBus"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer" unique_id=693009137]
+volume_db = -10.0
+pitch_scale = 0.9
+bus = &"PlayerBus"
