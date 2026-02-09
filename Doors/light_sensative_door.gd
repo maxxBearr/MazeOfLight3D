@@ -13,10 +13,11 @@ var basePosition : Vector3
 var shutterTween : Tween
 @onready var rumble_rock_sound: AudioStreamPlayer3D = %RumbleRockSound
 var doorGone := false
-
-
+var soundResetTimer : float
+var startingScale
 func _ready() -> void:
 	basePosition = position
+	startingScale = scale
 
 func _physics_process(delta: float) -> void:
 	if LanternManager.isInCone(global_position) == true:
@@ -69,38 +70,55 @@ func makeDoorReappear():
 	door_01.ignore_occlusion_culling = true
 	#print("door reappeared")
 
-func startJitterTween(jitterAmount:float, speed:float):
+func startJitterTween(jitterAmount:float, speed:float, zJitter:float):
 	if shutterTween:
 		shutterTween.kill()
-			
 	shutterTween = create_tween().set_loops()
 	shutterTween.tween_property(self,"position", basePosition + Vector3(
 		randf_range(-jitterAmount, jitterAmount),
 		randf_range(-jitterAmount, jitterAmount),
-		0.0),speed)
+		randf_range(-zJitter, zJitter))
+		,speed)
 
 func updateShutterIntensity(hueDistance: float):
 	var maxDistance = 0.5
-	var jitterAmount = remap(hueDistance, 0.0, maxDistance, 0.4, 0.05)
+	var jitterAmount = remap(hueDistance, 0.0, maxDistance, 0.8, 0.05)
 	var shutterSpeed = remap(hueDistance, 0.0, maxDistance, 0.05, 0.35)
-	
-	startJitterTween(jitterAmount, shutterSpeed)
+	var zJitter = jitterAmount * 0.25
+	if startingScale.x > 2.8 and startingScale.y >2.8 and startingScale.z > 2.8:
+		jitterAmount = jitterAmount * 3.0
+		shutterSpeed = shutterSpeed * 1.25
+		zJitter = zJitter * 1.8
+	startJitterTween(jitterAmount, shutterSpeed, zJitter)
 
 func updateRockSound(hueDistance: float):
-	if rumble_rock_sound.playing == false:
+	var intensity = remap(hueDistance, 0.8,0.05,0.0,1.0)
+	if not rumble_rock_sound.playing:
 		if door_01.transparency < 0.8:
-			rumble_rock_sound.play()
-			var audioLenght = rumble_rock_sound.stream.get_length()
-			var randomStart = randf_range(0.0, audioLenght)
+				soundResetTimer = 0.0
+				rumble_rock_sound.play()
+				var audioLength = rumble_rock_sound.stream.get_length() - 1.0
+				var randomStart = randf_range(0.3, audioLength)
+				rumble_rock_sound.seek(randomStart)
+
+	if intensity > 0.7 and rumble_rock_sound.playing:
+		soundResetTimer += get_physics_process_delta_time()
+		if soundResetTimer >= 0.5:
+			soundResetTimer = 0.0
+			var audioLength = rumble_rock_sound.stream.get_length() -1.0
+			var randomStart = randf_range(0.2, audioLength)
 			rumble_rock_sound.seek(randomStart)
-	
-	var intensity = remap(hueDistance,0.4, 0.05, 0.0, 1.0 )
-	rumble_rock_sound.pitch_scale = lerp(1.0,4.0,intensity)
+	else:
+		soundResetTimer = 0.0
+	rumble_rock_sound.pitch_scale = lerp(0.8,2.2,intensity)
 	rumble_rock_sound.volume_db = lerp(-30.0, -20.0, intensity)
 	
 func stopRockSound():
 	if rumble_rock_sound.playing:
-		rumble_rock_sound.stop()
+		var soundTween = create_tween()
+		soundTween.tween_property(rumble_rock_sound, "volume_db", -70, 1.5)
+		soundTween.finished.connect(func():
+			rumble_rock_sound.stop())
 
 
 func stopShutter():

@@ -37,4 +37,4 @@ stream = ExtResource("4_k53q1")
 volume_db = -11.939
 unit_size = 4.16
 pitch_scale = 0.75
-bus = &"PlayerBus"
+bus = &"Footsteps"

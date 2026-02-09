@@ -9,7 +9,7 @@ func isInCone(targetPosition : Vector3) -> bool:
 	#to check if something is in the cone, we need to check if it is both in the Range of the cone, and the angle 
 	#this is chekcing, if the target distance further than the light can reach, return false 
 	var distance = currentLantern.cone.global_position.distance_to(targetPosition)
-	var distanceTolerance = 1.2
+	var distanceTolerance = 1.25
 	if distance > (currentLantern.lightRange + distanceTolerance):
 		return false 
 	#basis is oreintaton of xyz. -z represents "forward" , so this next line just returns which way forward is 
@@ -23,7 +23,7 @@ func isInCone(targetPosition : Vector3) -> bool:
 	#this converts the cone angle into a dot value to compare with dot. cos == cos(0deg) = 1(straight ahead), cos(90) = perpedicualr
 	#so if cone is at 20 degrees, cos(20)=0.94. that means that the target needs a dot product oif at least 0.94 to be insaide the cone, basically almost striagth ahead 
 	var threshold = cos(deg_to_rad(currentLantern.angle))
-	var angleTolerance = 0.3
+	var angleTolerance = 0.2
 	if dot < (threshold - angleTolerance):
 		return false
 	return true

@@ -22,11 +22,12 @@ shader_parameter/min_brightness = 1.0
 
 [node name="Ghost1" type="Area3D" unique_id=2135367451]
 script = ExtResource("1_d4t3c")
+health = 200.0
 speed = 4.29
 inherentColor = Color(1, 0.348638, 0.6328528, 1)
-energyResistance = 12.87
-rangeResistance = 13.825
-angleResistance = 18.625
+energyResistance = 8.780000000000001
+rangeResistance = 27.45
+angleResistance = 32.425
 damageLabelScene = ExtResource("2_kcclt")
 
 [node name="GhostMesh" type="MeshInstance3D" parent="." unique_id=1547657922]
@@ -55,21 +56,22 @@ stream = ExtResource("6_26sax")
 volume_db = -2.0
 unit_size = 8.56
 max_db = 1.7
-bus = &"EnemyBus"
+bus = &"EnemySounds"
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="." unique_id=1803900954]
 unique_name_in_owner = true
 stream = ExtResource("7_1eprb")
 unit_size = 11.0
-bus = &"EnemyBus"
+bus = &"EnemySounds"
 
 [node name="DealDamageSound" type="AudioStreamPlayer3D" parent="." unique_id=1314831641]
 unique_name_in_owner = true
 stream = ExtResource("8_56am7")
-bus = &"EnemyBus"
+bus = &"EnemySounds"
 
 [node name="TakeDamageSound" type="AudioStreamPlayer3D" parent="." unique_id=623308641]
 unique_name_in_owner = true
 stream = ExtResource("9_1eprb")
 volume_db = -6.0
 pitch_scale = 2.7
+bus = &"GhostTakeDamage"

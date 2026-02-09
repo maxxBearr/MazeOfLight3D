@@ -17,18 +17,49 @@ damping = 0.77
 dry = 0.81
 wet = 0.3
 
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
+resource_name = "EQ"
+band_db/32_hz = -6.4
+band_db/100_hz = -7.1
+band_db/1000_hz = 3.4
+band_db/3200_hz = 4.4
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+room_size = 0.23
+dry = 0.91
+wet = 0.15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
+resource_name = "LowPassFilter"
+cutoff_hz = 700.0
+resonance = 1.0
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5t1r3"]
+resource_name = "Reverb"
+room_size = 1.0
+damping = 0.33
+spread = 0.5
+dry = 0.98
+wet = 0.09
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
+resource_name = "Compressor"
+threshold = -10.0
+ratio = 3.1
+
 [resource]
-bus/1/name = &"EnemyBus"
+bus/1/name = &"EnemySounds"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -13.245526
+bus/1/volume_db = -17.233809
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectReverb_n8wo2")
 bus/1/effect/0/enabled = true
 bus/1/effect/1/effect = SubResource("AudioEffectDistortion_j3pel")
 bus/1/effect/1/enabled = true
-bus/2/name = &"PlayerBus"
+bus/2/name = &"Footsteps"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
@@ -36,3 +67,25 @@ bus/2/volume_db = -13.784326
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
 bus/2/effect/0/enabled = true
+bus/3/name = &"GhostTakeDamage"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectEQ_j3pel")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectReverb_g28q7")
+bus/3/effect/1/enabled = true
+bus/4/name = &"RocksRumble"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.06726074
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectLowPassFilter_j3pel")
+bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectReverb_5t1r3")
+bus/4/effect/1/enabled = false
+bus/4/effect/2/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/4/effect/2/enabled = false

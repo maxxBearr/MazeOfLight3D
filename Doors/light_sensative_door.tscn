@@ -54,3 +54,4 @@ shape = SubResource("CylinderShape3D_fueea")
 unique_name_in_owner = true
 stream = ExtResource("5_dij2l")
 volume_db = -30.0
+bus = &"RocksRumble"

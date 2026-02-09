@@ -122,7 +122,10 @@ func updateTakeDamageSound(damageAmount:float):
 	
 func stopTakeDamageSound():
 	if take_damage_sound.playing:
-			take_damage_sound.stop()
+		var stopTween = create_tween()
+		stopTween.tween_property(take_damage_sound,"volume_db", -40, 3.0)
+		stopTween.finished.connect(func():
+			take_damage_sound.stop())
 
 
 func spawnDamageLabel(amount : int, color : Color):

@@ -1089,10 +1089,10 @@ tracks/0/path = NodePath("Selectable3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.087038554, 0.13578513, 0.38983464, 0.46829194, 0.67056465, 0.7294076, 0.853223, 0.9108, 0.9978786, 1.05),
+"times": PackedFloat32Array(0, 0.087038554, 0.13378061, 0.41666666, 0.46727198, 0.6666667, 0.7294076, 0.853223, 0.9108, 0.9978786, 1.05),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 4, -2), Vector3(0, 4, -2), Vector3(0, 5, -2), Vector3(0, 5, -2), Vector3(0, 5.5, -2), Vector3(0, 5.5, -2), Vector3(0, 6, -2), Vector3(0, 6, -2), Vector3(0, 6.3, -2), Vector3(0, 6.3, -2), Vector3(0, 9.3, -2.6)]
+"values": [Vector3(0, 4, -2), Vector3(0, 4, -2), Vector3(0, 4.8839016, -2), Vector3(0, 4.8839016, -2), Vector3(0, 5.8645, -2), Vector3(0, 5.8645, -2), Vector3(0, 6, -2), Vector3(0, 6, -2), Vector3(0, 6.3, -2), Vector3(0, 6.3, -2), Vector3(0, 9.3, -2.6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1209,10 +1209,10 @@ tracks/10/path = NodePath("Selectable3:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.087038554, 0.13484846, 0.39228645, 0.46951783, 0.67056465, 0.7330853, 0.853223, 0.91574365, 0.9991045, 1.05),
+"times": PackedFloat32Array(0, 0.087038554, 0.13378061, 0.41666666, 0.46727198, 0.6666667, 0.7330853, 0.853223, 0.91574365, 0.9991045, 1.05),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.2617994, -3.1415925, 1.3576005e-07), Vector3(0.2617994, -3.1415925, 1.3576005e-07), Vector3(0.14137167, -2.9670596, -0.5201081), Vector3(0.14137167, -2.9670596, -0.5201081), Vector3(-0.022689281, -2.7052603, 0.24958208), Vector3(-0.022689283, -2.7052603, 0.24958208), Vector3(0.1927992, -2.747068, -0.23033829), Vector3(0.1927992, -2.747068, -0.23033829), Vector3(-0.022689337, -2.70526, 0.24958207), Vector3(-0.022689342, -2.70526, 0.24958207), Vector3(0.25087094, -2.6898382, 0.28374124)]
+"values": [Vector3(0.2617994, -3.1415925, 1.3576005e-07), Vector3(0.2617994, -3.1415925, 1.3576005e-07), Vector3(0.23295957, -2.888114, -0.23835261), Vector3(0.23295957, -2.888114, -0.23835261), Vector3(0.12051632, -2.3702614, 0.100797415), Vector3(0.12051632, -2.3702614, 0.100797415), Vector3(0.1927992, -2.747068, -0.23033829), Vector3(0.1927992, -2.747068, -0.23033829), Vector3(-0.022689337, -2.70526, 0.24958207), Vector3(-0.022689342, -2.70526, 0.24958207), Vector3(0.25087094, -2.6898382, 0.28374124)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
@@ -1329,10 +1329,10 @@ tracks/20/path = NodePath("Selectable3:scale")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0, 0.087038554, 0.13578513, 0.38983464, 0.46829194, 0.67056465, 0.7294076, 0.853223, 0.9108401, 0.9978786, 1.05),
+"times": PackedFloat32Array(0, 0.087038554, 0.13378061, 0.41666666, 0.46727198, 0.6666667, 0.7294076, 0.853223, 0.9108401, 0.9978786, 1.05),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 1.1149999, 0.99999994), Vector3(1, 1.1149999, 0.99999994), Vector3(1, 1.1149999, 0.9999999), Vector3(1, 1.1149999, 0.9999999), Vector3(1, 1.1149997, 0.99999964), Vector3(1, 1.1149997, 0.99999964), Vector3(0.99999994, 1.1149998, 0.99999964), Vector3(0.99999994, 1.1149998, 0.99999964), Vector3(1, 1.1150001, 0.9999996), Vector3(1, 1.1150001, 0.9999996), Vector3(0.99999994, 1.1150002, 0.99999964)]
+"values": [Vector3(1, 1.1149999, 0.99999994), Vector3(1, 1.1149999, 0.99999994), Vector3(1, 1.1150002, 1.0000001), Vector3(1, 1.1150002, 1.0000001), Vector3(1, 1.115, 1), Vector3(1, 1.115, 1), Vector3(0.99999994, 1.1149998, 0.99999964), Vector3(0.99999994, 1.1149998, 0.99999964), Vector3(1, 1.1150001, 0.9999996), Vector3(1, 1.1150001, 0.9999996), Vector3(0.99999994, 1.1150002, 0.99999964)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
@@ -2741,9 +2741,9 @@ libraries/ = SubResource("AnimationLibrary_7vp4p")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer" unique_id=1880155011]
 volume_db = -10.0
 pitch_scale = 0.9
-bus = &"PlayerBus"
+bus = &"Footsteps"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer" unique_id=693009137]
 volume_db = -10.0
 pitch_scale = 0.9
-bus = &"PlayerBus"
+bus = &"Footsteps"
