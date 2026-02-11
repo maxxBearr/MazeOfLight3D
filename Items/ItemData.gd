@@ -6,3 +6,14 @@ extends Resource
 @export var icon : Texture2D
 @export var effectType: String 
 @export var effectValue : float 
+@export var maxCharge : float 
+@export var currentCharge : float = 30
+
+
+func getCurrentCharge()-> float:
+	return currentCharge / maxCharge
+
+func hasCharge() -> bool:
+	if currentCharge < 0.01:
+		return false
+	return true

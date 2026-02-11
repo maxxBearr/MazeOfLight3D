@@ -29,6 +29,7 @@ LanternManager="*res://Globals/lanternManager.gd"
 EnemyManager="*res://Globals/EnemyManager.gd"
 InventoryManager="*res://Globals/InventoryManager.gd"
 UImanager="*res://Globals/UImanager.gd"
+CrystalManager="*uid://d80sdua0skyj"
 
 [filesystem]
 

@@ -1,9 +1,11 @@
 extends Node
 
+
 var currentLantern: Lantern
 
 func register(lantern : Lantern):
 	currentLantern = lantern
+	
 
 func isInCone(targetPosition : Vector3) -> bool:
 	#to check if something is in the cone, we need to check if it is both in the Range of the cone, and the angle 

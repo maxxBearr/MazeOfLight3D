@@ -4,6 +4,7 @@ signal itemAdded(item: ItemData, slotIndex : int)
 signal itemRemoved(item: ItemData, slotIndex: int)
 signal unableToAdd
 signal demoFinished(message: String)
+signal inventoryChanged
 
 var maxSlots : int = 10
 var slots : Array = []
@@ -22,15 +23,16 @@ func addItem(item:ItemData) -> bool:
 		var firstAvailableSlot = slots.find(null)
 		slots[firstAvailableSlot] = item
 		itemAdded.emit(item, firstAvailableSlot)
+		inventoryChanged.emit()
 		checkDemoFinished()
 		return true
-
 func removeItem(slotIndex:int) -> ItemData:
 	if slotIndex <0 or  slotIndex >= maxSlots:
 		return null
 	var item = slots[slotIndex]
 	if item != null:
 		itemRemoved.emit(item, slotIndex)
+		inventoryChanged.emit()
 		slots[slotIndex] = null
 	return item
 
@@ -55,7 +57,13 @@ func checkDemoFinished():
 			get_tree().paused = true
 			get_tree().quit())
 
-
+func getActiveCrystals() -> Array[ItemData]:
+	var activeCrystals: Array[ItemData] = []
+	for crystal in slots:
+		if crystal != null and crystal.hasCharge():
+			activeCrystals.append(crystal)
+	return activeCrystals
+		
 func getCountOfItem(item: ItemData) -> int:
 	var matchingSlots : int = 0
 	for x in slots:

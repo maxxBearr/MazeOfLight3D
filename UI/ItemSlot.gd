@@ -19,10 +19,6 @@ func addItem (item : ItemData):
 	itemData = item 
 	if item.icon:
 		texture = item.icon
-	applyEffect(item)
-
-func applyEffect (item : ItemData):
-	GameEvents.itemEffectApplied.emit(item.effectType, item.effectValue)
 
 
 func onMouseEntered ():
