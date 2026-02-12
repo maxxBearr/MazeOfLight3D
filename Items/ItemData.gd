@@ -6,8 +6,8 @@ extends Resource
 @export var icon : Texture2D
 @export var effectType: String 
 @export var effectValue : float 
-@export var maxCharge : float 
-@export var currentCharge : float = 30
+@export var maxCharge : float = 31
+@export var currentCharge : float = 31
 
 
 func getCurrentCharge()-> float:

@@ -2630,7 +2630,7 @@ shape = SubResource("CapsuleShape3D_7lfsd")
 [node name="Selectable3" type="MeshInstance3D" parent="." unique_id=2008813620]
 unique_name_in_owner = true
 transform = Transform3D(-1, 1.0779758e-07, -1.4585073e-07, 1.3113413e-07, 1.0770072, -0.258819, 1.1585851e-07, -0.28858322, -0.96592575, 0, 4, -2)
-transparency = 0.12
+transparency = 0.1
 mesh = ExtResource("6_5lmpe")
 
 [node name="Option3Area" type="Area3D" parent="Selectable3" unique_id=593059350]

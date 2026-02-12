@@ -9,3 +9,4 @@ func updateSlot(item:ItemData, slotIndex:int):
 	var slot = get_child(slotIndex)
 	var itemSlot := slot as ItemSlot
 	itemSlot.addItem(item)
+	itemSlot.setSlotIndex(slotIndex)

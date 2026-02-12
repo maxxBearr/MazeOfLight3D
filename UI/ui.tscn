@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkmyv16s6vet7"]
+[gd_scene format=3 uid="uid://bkmyv16s6vet7"]
 
 [ext_resource type="Theme" uid="uid://o8kv76gc47gd" path="res://UI/StandardUITheme.tres" id="1_hat8c"]
 [ext_resource type="Script" uid="uid://b463c404olsqm" path="res://UI/ItemSlot.gd" id="1_jgypo"]
@@ -11,10 +11,10 @@
 [ext_resource type="Script" uid="uid://0opev22hgi2d" path="res://UI/InteractPrompt.gd" id="8_cbfhl"]
 [ext_resource type="Script" uid="uid://cmxii7ve0rsw7" path="res://UI/tell_player.gd" id="10_h81ot"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" unique_id=1354259346]
 process_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1447832038]
 anchors_preset = -1
 anchor_right = 0.238
 anchor_bottom = 1.008
@@ -22,10 +22,10 @@ offset_right = -0.17599487
 offset_bottom = -355.18402
 theme = ExtResource("1_hat8c")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1414709530]
 layout_mode = 2
 
-[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=589663766]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
@@ -35,81 +35,81 @@ rounded = true
 show_percentage = false
 script = ExtResource("2_4fiuh")
 
-[node name="InventorySlots" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="InventorySlots" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=140108738]
 layout_mode = 2
 script = ExtResource("1_pis6k")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="ItemSlots" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=43706017]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("3_c7tqi")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1850689099]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("5_cbfhl")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1831935843]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1800181182]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1786941515]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=62252728]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1368198330]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1346312888]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1812848]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect10" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots"]
+[node name="TextureRect10" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1175642270]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="ItemToolTip" type="PanelContainer" parent="."]
+[node name="ItemToolTip" type="PanelContainer" parent="." unique_id=849761547]
 unique_name_in_owner = true
 offset_left = 56.0
 offset_top = 96.0
@@ -119,39 +119,46 @@ size_flags_vertical = 0
 theme = ExtResource("1_hat8c")
 script = ExtResource("2_jgypo")
 
-[node name="MarginContainer" type="MarginContainer" parent="ItemToolTip"]
+[node name="MarginContainer" type="MarginContainer" parent="ItemToolTip" unique_id=439997874]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ItemToolTip/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemToolTip/MarginContainer" unique_id=1950468538]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="ItemNameLabel" type="Label" parent="ItemToolTip/MarginContainer/VBoxContainer"]
+[node name="ItemNameLabel" type="Label" parent="ItemToolTip/MarginContainer/VBoxContainer" unique_id=2040352474]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Label"
 
-[node name="ItemDescriptionLabel" type="Label" parent="ItemToolTip/MarginContainer/VBoxContainer"]
+[node name="ItemDescriptionLabel" type="Label" parent="ItemToolTip/MarginContainer/VBoxContainer" unique_id=718494094]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "descriptioon"
 
-[node name="InteractPompt" type="Label" parent="."]
+[node name="ChargeLabel" type="Label" parent="ItemToolTip/MarginContainer/VBoxContainer" unique_id=1333108340]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "charge"
+
+[node name="InteractPompt" type="Label" parent="." unique_id=559736845]
 offset_right = 40.0
 offset_bottom = 23.0
 theme = ExtResource("1_hat8c")
 script = ExtResource("8_cbfhl")
 
-[node name="TellPlayer" type="RichTextLabel" parent="."]
+[node name="TellPlayer" type="RichTextLabel" parent="." unique_id=1669669793]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_right = 1.0020001
