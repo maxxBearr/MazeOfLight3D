@@ -39,7 +39,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_kacum")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35714293, 0)
 light_energy = 1.1
-light_specular = 2.325
+light_specular = 11.831
 omni_range = 8.465
 omni_attenuation = 2.0
 

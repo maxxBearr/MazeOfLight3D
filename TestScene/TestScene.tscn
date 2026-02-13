@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg0mq8ecm6akm"]
+[gd_scene format=3 uid="uid://bg0mq8ecm6akm"]
 
 [ext_resource type="MeshLibrary" uid="uid://bawoqh58bvv5m" path="res://Environment/wallandfloor.tres" id="1_mncer"]
 [ext_resource type="PackedScene" uid="uid://btaqqfe72s0ng" path="res://Player/player.tscn" id="2_cguwc"]
@@ -9,7 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://btia0j2af8wvs" path="res://InteriorCastle/OBJ/Floor01.obj" id="5_tq6uv"]
 [ext_resource type="PackedScene" uid="uid://buek6c52w13lg" path="res://Items/ItemPickUps/CrystalPickup.tscn" id="7_5uqhi"]
 [ext_resource type="PackedScene" uid="uid://bkmyv16s6vet7" path="res://UI/ui.tscn" id="7_b3dy1"]
-[ext_resource type="Resource" uid="uid://gxcf228vh3ev" path="res://Items/ItemResources/RotationCrystal.tres" id="9_rxm5d"]
+[ext_resource type="Resource" uid="uid://gxcf228vh3ev" path="res://Items/CrystalResources/General/RotationCrystal.tres" id="9_rxm5d"]
 
 [sub_resource type="Environment" id="Environment_wicfy"]
 background_mode = 1

@@ -45,19 +45,17 @@ var selectedItems: Array[ItemData] = []
 
 
 var arrayOfBase = []
-
-
+var currentType : ItemData.CrystalTypes
+var filteredItems = []
 
 func _ready() -> void:
 	camera_3d = get_viewport().get_camera_3d()
-	selectRandomItems()
-	updateLabels()
 	selectableGroup = [selectable_1, selectable_2, selectable_3]
 	arrayOfBase = [crystal_5,crystal_16,crystal_17,crystal_18,crystal_19,crystal_20,crystal_21]
 
 
 func selectRandomItems():
-	var available = possibleItems.duplicate()
+	var available = filteredItems.duplicate()
 	available.shuffle()
 	selectedItems = [
 		available[0],
@@ -91,6 +89,13 @@ func updateCrystalType(crystalType : ItemData.CrystalTypes):
 		var mat = option.get_surface_override_material(0).duplicate()
 		option.set_surface_override_material(0, mat)
 		mat.set_shader_parameter("albedo", baseColor)
+		
+	filteredItems = possibleItems.filter(func(checkMe:ItemData) ->bool:
+		if checkMe.crystalType == crystalType:
+			return true
+		return false)
+	selectRandomItems()
+	updateLabels()
 
 
 func updateLabels():

@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dhu4603n35la1" path="res://Items/crystal_select.gd" id="1_7lfsd"]
 [ext_resource type="PackedScene" uid="uid://nb1n07xus7be" path="res://Items/CrystalModels/crystal_5.fbx" id="1_qcxqk"]
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="2_5lmpe"]
-[ext_resource type="Resource" uid="uid://c3o0mbt4whmpn" path="res://Items/ItemResources/EnergyCrystal.tres" id="3_tjnak"]
-[ext_resource type="Resource" uid="uid://dytlmt6r1btb6" path="res://Items/ItemResources/RangeCrystal.tres" id="4_jtyqc"]
+[ext_resource type="Resource" uid="uid://c3o0mbt4whmpn" path="res://Items/CrystalResources/General/EnergyCrystal.tres" id="3_tjnak"]
+[ext_resource type="Resource" uid="uid://dytlmt6r1btb6" path="res://Items/CrystalResources/General/RangeCrystal.tres" id="4_jtyqc"]
 [ext_resource type="PackedScene" uid="uid://dn5j4ey3e7h2h" path="res://Items/CrystalModels/crystal_16.fbx" id="4_kwavh"]
-[ext_resource type="Resource" uid="uid://gxcf228vh3ev" path="res://Items/ItemResources/RotationCrystal.tres" id="5_eehhh"]
+[ext_resource type="Resource" uid="uid://gxcf228vh3ev" path="res://Items/CrystalResources/General/RotationCrystal.tres" id="5_eehhh"]
 [ext_resource type="PackedScene" uid="uid://c5t7flpwokm3l" path="res://Items/CrystalModels/crystal_18.fbx" id="5_snbjm"]
 [ext_resource type="ArrayMesh" uid="uid://dro3vpc3lofmk" path="res://Items/CrystalModels/SelectCrystalMesh3.tres" id="6_5lmpe"]
-[ext_resource type="Resource" uid="uid://dl8xp4533f7ah" path="res://Items/ItemResources/AngleCrystal.tres" id="6_eehhh"]
+[ext_resource type="Resource" uid="uid://dl8xp4533f7ah" path="res://Items/CrystalResources/General/AngleCrystal.tres" id="6_eehhh"]
 [ext_resource type="ArrayMesh" uid="uid://b47cerxno88pv" path="res://Items/CrystalModels/SelectCrystalMesh2.tres" id="7_tjnak"]
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="8_2r6hd"]
 [ext_resource type="AudioStream" uid="uid://resxyto6xrws" path="res://Sounds/CrystalBreakingSounds/icecrack.wav" id="11_tjnak"]
@@ -2714,74 +2714,86 @@ shape = SubResource("CapsuleShape3D_delg3")
 
 [node name="crystal_16" parent="." unique_id=509429960 instance=ExtResource("4_kwavh")]
 
-[node name="crystal_16" parent="crystal_16" index="0" unique_id=1074241082]
+[node name="crystal_16" parent="crystal_16" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_2k5us")
 
 [node name="crystal_17" parent="." unique_id=2098181117 instance=ExtResource("4_kwavh")]
 
-[node name="crystal_16" parent="crystal_17" index="0" unique_id=1074241082]
+[node name="crystal_16" parent="crystal_17" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_qxrp2")
 
 [node name="crystal_18" parent="." unique_id=548979390 instance=ExtResource("5_snbjm")]
 transform = Transform3D(0.9330128, 0.08709682, -0.34914386, -0.25881907, 0.83651644, -0.48296294, 0.25, 0.5409757, 0.8030226, 0, 2, 2)
 
-[node name="crystal_18" parent="crystal_18" index="0" unique_id=2095386567]
+[node name="crystal_18" parent="crystal_18" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_20" parent="." unique_id=745625553 instance=ExtResource("5_snbjm")]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, -2, 1, 2)
 
-[node name="crystal_18" parent="crystal_20" index="0" unique_id=2095386567]
+[node name="crystal_18" parent="crystal_20" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_7" parent="." unique_id=1104229321 instance=ExtResource("5_snbjm")]
 transform = Transform3D(-4.371139e-08, 0.5, 0.8660254, 0, 0.8660254, -0.5, -1, -2.1855694e-08, -3.7855173e-08, 0, 4, -1)
 
-[node name="crystal_18" parent="crystal_7" index="0" unique_id=2095386567]
+[node name="crystal_18" parent="crystal_7" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_19" parent="." unique_id=97037484 instance=ExtResource("5_snbjm")]
 transform = Transform3D(-4.371139e-08, -0.5, -0.8660254, 0, 0.8660254, -0.5, 1, -2.1855694e-08, -3.7855173e-08, -3, 1, 2)
 
-[node name="crystal_18" parent="crystal_19" index="0" unique_id=2095386567]
+[node name="crystal_18" parent="crystal_19" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_6" parent="." unique_id=260867328 instance=ExtResource("1_qcxqk")]
 transform = Transform3D(0.8365162, -0.48296297, -0.258819, 0.5, 0.8660254, 5.4542024e-09, 0.22414385, -0.12940954, 0.96592575, 0, 1, -2)
 
-[node name="crystal_5" parent="crystal_6" index="0" unique_id=104987585]
+[node name="crystal_5" parent="crystal_6" index="0"]
 mesh = SubResource("ArrayMesh_yo7e7")
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="CrystalSelectLight" type="SpotLight3D" parent="." unique_id=2027253360]
 unique_name_in_owner = true
 transform = Transform3D(0.89125204, -0.26656553, 0.36689603, -0.018247614, 0.7872834, 0.6163212, -0.45314115, -0.55599254, 0.69680375, 9.08039, 18.668226, 15)
-light_energy = 4.559
+light_energy = 8.0
 light_indirect_energy = 0.105
 light_volumetric_fog_energy = 0.015
-light_specular = 17.403
+light_specular = 20.0
 spot_range = 27.594
+spot_attenuation = 0.92
 spot_angle = 31.7
 
 [node name="CrystalSelectLight2" type="SpotLight3D" parent="." unique_id=1581632812]
 unique_name_in_owner = true
 transform = Transform3D(0.92050487, 0.22689871, -0.31810027, 0, 0.8141155, 0.58070296, 0.39073113, -0.5345399, 0.7493973, -9, 18, 13)
-light_energy = 7.0
+light_energy = 8.0
 light_indirect_energy = 0.105
 light_volumetric_fog_energy = 0.015
-light_specular = 17.403
+light_specular = 20.0
 spot_range = 21.093
+spot_attenuation = 0.92
 spot_angle = 30.57
 
 [node name="CrystalSelectLight3" type="SpotLight3D" parent="." unique_id=1335319132]
 unique_name_in_owner = true
 transform = Transform3D(0.92050487, 0.36598697, -0.1368369, -0.10112865, 0.561431, 0.82132107, 0.37741727, -0.74219185, 0.5538118, -2, 18, 3)
-light_energy = 4.672
+light_energy = 8.0
 light_indirect_energy = 0.105
 light_volumetric_fog_energy = 0.015
-light_specular = 17.403
+light_specular = 20.0
 spot_range = 18.02
+spot_attenuation = 0.92
 spot_angle = 25.4
+
+[node name="CrystalSelectLight4" type="SpotLight3D" parent="." unique_id=1648966552]
+transform = Transform3D(0.991881, 0.12410141, -0.027766004, -0.05039415, 0.5840379, 0.81016064, 0.116758466, -0.8021837, 0.58555007, -2, 24.6, 17.2)
+light_energy = 3.0
+light_indirect_energy = 0.105
+light_volumetric_fog_energy = 0.015
+light_specular = 20.0
+spot_range = 30.0
+spot_angle = 31.2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1165105114]
 unique_name_in_owner = true

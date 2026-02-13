@@ -37,15 +37,15 @@ func _ready() -> void:
 	if selectLight:
 		var color = setCrystalLight
 		var newColorH = wrapf(color.h + randf_range(color.h -0.15, color.h +0.15), 0.0,1.0)
-		selectLight.light_color = Color.from_hsv(newColorH,color.s, color.v)
+		selectLight.light_color = Color.from_hsv(newColorH,1.0, 1.0)
 	if selectLight2:
 		var color = setCrystalLight
 		var newColorH = wrapf(color.h + randf_range(color.h -0.15, color.h +0.15), 0.0,1.0)
-		selectLight2.light_color = Color.from_hsv(newColorH,color.s, color.v)
+		selectLight2.light_color = Color.from_hsv(newColorH,1, 1)
 	if selectLight3:
 		var color = setCrystalLight
 		var newColorH = wrapf(color.h + randf_range(color.h -0.15, color.h +0.15), 0.0,1.0)
-		selectLight3.light_color = Color.from_hsv(newColorH,color.s, color.v)
+		selectLight3.light_color = Color.from_hsv(newColorH,1, 1)
 func _process(delta: float) -> void:
 	if playerInrange and Input.is_action_just_pressed("Interact") and InventoryManager.isFull() == false:
 		openSelection(crystalTypes)
