@@ -66,6 +66,7 @@ func recalcEffects():
 	var activeCrystals:Array[ItemData] = InventoryManager.getActiveCrystals()
 	for crystal in activeCrystals:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		var activeStrength = CrystalManager.previousActivation[crystal.crystalType]
 		if crystal.effectType == "LanternSpeed":
 			var effect = crystal.effectValue
@@ -80,6 +81,8 @@ func recalcEffects():
 			var effect = crystal.effectValue
 			lightRange *= lerp(1.0, effect, activeStrength)
 =======
+=======
+>>>>>>> Stashed changes
 		if crystal.effectType == crystal.EffectTypes.RotationSpeed:
 			rotationSpeed *= crystal.effectValue
 		if crystal.effectType == crystal.EffectTypes.Energy:
