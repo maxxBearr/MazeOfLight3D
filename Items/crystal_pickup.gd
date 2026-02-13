@@ -7,13 +7,12 @@ var playerInrange :Player = null
 @onready var crystal_light: OmniLight3D = %CrystalLight
 @onready var crystal_select: Node3D = %CrystalSelect
 @export var crystalTypes : ItemData.CrystalTypes
+
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
 	body_exited.connect(onBodyExited)
 	crystal_select.visible = false
-	
-	
-	
+
 	if crystalTypes == ItemData.CrystalTypes.General:
 		setCrystalLight = Color.WHITE
 	elif crystalTypes == ItemData.CrystalTypes.Red:
@@ -22,7 +21,6 @@ func _ready() -> void:
 		setCrystalLight = Color.BLUE
 	elif crystalTypes == ItemData.CrystalTypes.Green:
 		setCrystalLight = Color.GREEN
-	
 	
 	crystal_light.light_color = setCrystalLight
 	var mat = crystal_mesh_1.get_surface_override_material(0).duplicate()
@@ -37,14 +35,20 @@ func _ready() -> void:
 	var selectLight3 = crystal_select.get_node("CrystalSelectLight3")
 
 	if selectLight:
-		selectLight.light_color = setCrystalLight
+		var color = setCrystalLight
+		var newColorH = wrapf(color.h + randf_range(color.h -0.15, color.h +0.15), 0.0,1.0)
+		selectLight.light_color = Color.from_hsv(newColorH,color.s, color.v)
 	if selectLight2:
-		selectLight2.light_color.h = (setCrystalLight.h - 0.1)
+		var color = setCrystalLight
+		var newColorH = wrapf(color.h + randf_range(color.h -0.15, color.h +0.15), 0.0,1.0)
+		selectLight2.light_color = Color.from_hsv(newColorH,color.s, color.v)
 	if selectLight3:
-		selectLight3.light_color.h = setCrystalLight.h + 0.2
+		var color = setCrystalLight
+		var newColorH = wrapf(color.h + randf_range(color.h -0.15, color.h +0.15), 0.0,1.0)
+		selectLight3.light_color = Color.from_hsv(newColorH,color.s, color.v)
 func _process(delta: float) -> void:
 	if playerInrange and Input.is_action_just_pressed("Interact") and InventoryManager.isFull() == false:
-		openSelection()
+		openSelection(crystalTypes)
 		GameEvents.hideInteractPrompt.emit()
 	if crystal_select.visible == false:
 		crystal_select.set_process(false)
@@ -70,10 +74,10 @@ func onBodyExited(body):
 		playerInrange = null
 		GameEvents.hideInteractPrompt.emit()
 
-func openSelection():
+func openSelection(crystal: ItemData.CrystalTypes):
 	var mainCamera = get_viewport().get_camera_3d()
-	
 	crystal_select.global_position = mainCamera.global_position + (-mainCamera.global_transform.basis.z *15) + (-mainCamera.global_transform.basis.y *5)
 	crystal_select.rotation.y = mainCamera.rotation.y
+	crystal_select.updateCrystalType(crystal)
 	crystal_select.visible = true
 	get_tree().paused = true

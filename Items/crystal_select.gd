@@ -3,9 +3,9 @@ extends Node3D
 @onready var selectable1_base_pos = $Selectable1.position
 @onready var selectable2_base_pos = $Selectable2.position
 @onready var selectable3_base_pos = $Selectable3.position
-@onready var selectable_1: Node3D = %Selectable1
-@onready var selectable_2: Node3D = %Selectable2
-@onready var selectable_3: Node3D = %Selectable3
+@onready var selectable_1: MeshInstance3D = %Selectable1
+@onready var selectable_2: MeshInstance3D = %Selectable2
+@onready var selectable_3: MeshInstance3D = %Selectable3
 
 var selectable1_popped: bool = false
 var selectable2_popped: bool = false
@@ -15,7 +15,7 @@ var tween1 : Tween
 var tween2: Tween
 var tween3: Tween
 
-var selectableGroup = []
+var selectableGroup := []
 
 @onready var crystal_select_light: SpotLight3D = %CrystalSelectLight
 @onready var crystal_select_light_2: SpotLight3D = %CrystalSelectLight2
@@ -35,11 +35,25 @@ var isSelecting = false
 @export var possibleItems : Array[ItemData]
 var selectedItems: Array[ItemData] = []
 
+@onready var crystal_16: MeshInstance3D = $crystal_16/crystal_16
+@onready var crystal_17: MeshInstance3D = $crystal_17/crystal_16
+@onready var crystal_18: MeshInstance3D = $crystal_18/crystal_18
+@onready var crystal_19: MeshInstance3D = $crystal_20/crystal_18
+@onready var crystal_20: MeshInstance3D = $crystal_7/crystal_18
+@onready var crystal_21: MeshInstance3D = $crystal_19/crystal_18
+@onready var crystal_5: MeshInstance3D = $crystal_6/crystal_5
+
+
+var arrayOfBase = []
+
+
+
 func _ready() -> void:
 	camera_3d = get_viewport().get_camera_3d()
 	selectRandomItems()
 	updateLabels()
 	selectableGroup = [selectable_1, selectable_2, selectable_3]
+	arrayOfBase = [crystal_5,crystal_16,crystal_17,crystal_18,crystal_19,crystal_20,crystal_21]
 
 
 func selectRandomItems():
@@ -61,9 +75,22 @@ func updateCrystalType(crystalType : ItemData.CrystalTypes):
 		newColor = Color.BLUE
 	elif crystalType == ItemData.CrystalTypes.Green:
 		newColor = Color.GREEN
-	for option in selectableGroup:
-		#affectcolorhere
-		pass
+	
+	for option:MeshInstance3D in selectableGroup:
+		var mat = option.get_surface_override_material(0).duplicate()
+		option.set_surface_override_material(0, mat)
+		mat.set_shader_parameter("albedo", newColor)
+	for option:MeshInstance3D in arrayOfBase:
+		var baseColor = newColor
+		var h = wrapf(baseColor.h + randf_range(-0.15, 0.15), 0.0, 1.0)
+		var s = baseColor.s
+		var v = baseColor.v
+
+		baseColor = Color.from_hsv(h, s, v)
+
+		var mat = option.get_surface_override_material(0).duplicate()
+		option.set_surface_override_material(0, mat)
+		mat.set_shader_parameter("albedo", baseColor)
 
 
 func updateLabels():

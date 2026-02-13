@@ -65,14 +65,19 @@ func recalcEffects():
 	energy = baseEnergy
 	var activeCrystals:Array[ItemData] = InventoryManager.getActiveCrystals()
 	for crystal in activeCrystals:
+		var activeStrength = CrystalManager.previousActivation[crystal.crystalType]
 		if crystal.effectType == crystal.EffectTypes.RotationSpeed:
-			rotationSpeed *= crystal.effectValue
+			var effect = crystal.effectValue
+			rotationSpeed *= lerp(1.0, effect, activeStrength)
 		if crystal.effectType == crystal.EffectTypes.Energy:
-			energy *= crystal.effectValue
+			var effect = crystal.effectValue
+			energy *= lerp(1.0, effect, activeStrength)
 		if crystal.effectType == crystal.EffectTypes.Angle:
-			angle *= crystal.effectValue
+			var effect = crystal.effectValue
+			angle *= lerp(1.0, effect, activeStrength)
 		if crystal.effectType == crystal.EffectTypes.LightRange:
-			lightRange *= crystal.effectValue
+			var effect = crystal.effectValue
+			lightRange *= lerp(1.0, effect, activeStrength)
 
 	
 	cone.light_energy = energy
