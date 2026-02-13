@@ -4,6 +4,9 @@ var itemData : ItemData = null
 @export var emptySlotText : Texture2D
 @onready var item_tool_tip: ItemToolTip = %ItemToolTip
 var mySlotIndex : int = -1
+var basePos
+var baseScale
+var tween : Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +14,9 @@ func _ready() -> void:
 	mouse_entered.connect(onMouseEntered)
 	mouse_exited.connect(onMouseExited)
 	CrystalManager.crystalChargeChanged.connect(onCrystalChargeChanged)
+	CrystalManager.activeZoneChanged.connect(onActiveZoneChanged)
+	basePos = position
+	baseScale = scale
 
 
 func isEmpty () -> bool:
@@ -39,7 +45,30 @@ func onCrystalChargeChanged (slotIndex : int):
 
 			modulate = Color.WHITE.lerp(Color.DARK_GRAY, 1.0 - chargePercent)
 	
+func onActiveZoneChanged (crystalDict : Dictionary):
+	
+	if itemData != null:
+		if tween and tween.is_running():
+			tween.kill()
+		var activeStrength = crystalDict[itemData.crystalType]
+		var newPos : Vector2 = basePos
+		var newScale = baseScale
+		if activeStrength == 1.0 and itemData.crystalType != itemData.CrystalTypes.General:
+			tween = create_tween().set_parallel()
+			tween.set_trans(Tween.TRANS_CIRC)
+			tween.tween_property(self, "position", Vector2(basePos.x, newPos.y -2.0), 0.8)
+			tween.tween_property(self, "scale", newScale * 1.5, 0.8)
+		elif activeStrength == 0.5:
+			tween = create_tween().set_parallel()
+			tween.set_trans(Tween.TRANS_CIRC)
+			tween.tween_property(self, "position",  Vector2(basePos.x, newPos.y - 1.0), 0.6)
+			tween.tween_property(self, "scale", newScale * 1.25, 0.6)
+		elif activeStrength < 0.5:
 
+			tween = create_tween().set_parallel()
+			tween.set_trans(Tween.TRANS_CIRC)
+			tween.tween_property(self, "position", basePos, 0.8)
+			tween.tween_property(self, "scale", baseScale, 0.8)
 
 func setSlotIndex(index :int):
 	mySlotIndex = index

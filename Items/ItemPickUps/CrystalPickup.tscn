@@ -1,32 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://buek6c52w13lg"]
+[gd_scene format=3 uid="uid://buek6c52w13lg"]
 
 [ext_resource type="Script" uid="uid://cp15fk6yx0iev" path="res://Items/crystal_pickup.gd" id="1_avafp"]
 [ext_resource type="ArrayMesh" uid="uid://bwy1jq27b72c3" path="res://Items/CrystalModels/CrystalMesh1.tres" id="2_p0hxh"]
+[ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="3_dhlux"]
 [ext_resource type="PackedScene" uid="uid://cxbhubqu1f3ub" path="res://Items/ItemPickUps/CrystalSelect.tscn" id="3_uaapb"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cp2lt"]
 radius = 3.0
 
-[node name="ItemPickUp" type="Area3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kacum"]
+render_priority = 0
+shader = ExtResource("3_dhlux")
+shader_parameter/albedo = Color(0.5929701, 0.1634, 0.86, 1)
+shader_parameter/shading_levels = 5
+shader_parameter/min_brightness = 0.0
+
+[node name="ItemPickUp" type="Area3D" unique_id=273662344]
 process_mode = 3
 script = ExtResource("1_avafp")
 setCrystalLight = Color(6.016344e-08, 0.444981, 0.08451808, 1)
 
-[node name="CollisionShape2D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape3D" parent="." unique_id=1197840424]
 shape = SubResource("CylinderShape3D_cp2lt")
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=986847240]
 
-[node name="InteractLabel" type="Label3D" parent="."]
+[node name="InteractLabel" type="Label3D" parent="." unique_id=1667850347]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="CrystalMesh1" type="MeshInstance3D" parent="."]
+[node name="CrystalMesh1" type="MeshInstance3D" parent="." unique_id=767210951]
 unique_name_in_owner = true
 transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 0, -1, 0)
 mesh = ExtResource("2_p0hxh")
+surface_material_override/0 = SubResource("ShaderMaterial_kacum")
 
-[node name="CrystalLight" type="OmniLight3D" parent="CrystalMesh1"]
+[node name="CrystalLight" type="OmniLight3D" parent="CrystalMesh1" unique_id=1001959801]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35714293, 0)
 light_energy = 1.1
@@ -34,6 +43,6 @@ light_specular = 2.325
 omni_range = 8.465
 omni_attenuation = 2.0
 
-[node name="CrystalSelect" parent="." instance=ExtResource("3_uaapb")]
+[node name="CrystalSelect" parent="." unique_id=721960087 instance=ExtResource("3_uaapb")]
 unique_name_in_owner = true
 visible = false

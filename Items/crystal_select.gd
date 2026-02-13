@@ -15,6 +15,7 @@ var tween1 : Tween
 var tween2: Tween
 var tween3: Tween
 
+var selectableGroup = []
 
 @onready var crystal_select_light: SpotLight3D = %CrystalSelectLight
 @onready var crystal_select_light_2: SpotLight3D = %CrystalSelectLight2
@@ -38,6 +39,7 @@ func _ready() -> void:
 	camera_3d = get_viewport().get_camera_3d()
 	selectRandomItems()
 	updateLabels()
+	selectableGroup = [selectable_1, selectable_2, selectable_3]
 
 
 func selectRandomItems():
@@ -48,6 +50,21 @@ func selectRandomItems():
 		available[1],
 		available[2]
 	]
+
+func updateCrystalType(crystalType : ItemData.CrystalTypes):
+	var newColor : Color
+	if crystalType == ItemData.CrystalTypes.General:
+		newColor = Color.WHITE
+	elif crystalType == ItemData.CrystalTypes.Red:
+		newColor = Color.RED
+	elif crystalType == ItemData.CrystalTypes.Blue:
+		newColor = Color.BLUE
+	elif crystalType == ItemData.CrystalTypes.Green:
+		newColor = Color.GREEN
+	for option in selectableGroup:
+		#affectcolorhere
+		pass
+
 
 func updateLabels():
 	item_1.text = selectedItems[0].itemName

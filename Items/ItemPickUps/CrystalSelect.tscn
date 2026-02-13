@@ -11,8 +11,16 @@
 [ext_resource type="ArrayMesh" uid="uid://dro3vpc3lofmk" path="res://Items/CrystalModels/SelectCrystalMesh3.tres" id="6_5lmpe"]
 [ext_resource type="Resource" uid="uid://dl8xp4533f7ah" path="res://Items/ItemResources/AngleCrystal.tres" id="6_eehhh"]
 [ext_resource type="ArrayMesh" uid="uid://b47cerxno88pv" path="res://Items/CrystalModels/SelectCrystalMesh2.tres" id="7_tjnak"]
+[ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="8_2r6hd"]
 [ext_resource type="AudioStream" uid="uid://resxyto6xrws" path="res://Sounds/CrystalBreakingSounds/icecrack.wav" id="11_tjnak"]
 [ext_resource type="AudioStream" uid="uid://b4l4mbsuaa8yj" path="res://Sounds/CrystalBreakingSounds/breaking-glass-1-468383.mp3" id="12_jtyqc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1wpl8"]
+render_priority = 0
+shader = ExtResource("8_2r6hd")
+shader_parameter/albedo = Color(0.0654897, 0.51025665, 0.9999998, 1)
+shader_parameter/shading_levels = 4
+shader_parameter/min_brightness = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qcxqk"]
 radius = 1.632
@@ -2606,6 +2614,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.24999997, 0.45422754, 0.93301255, -0.0669873, 1.6952001, -0.25, -0.9659257, 1.3075771e-08, 0.258819, 2, 1, 0)
 transparency = 0.12
 mesh = ExtResource("6_5lmpe")
+surface_material_override/0 = SubResource("ShaderMaterial_1wpl8")
 
 [node name="Option1Area" type="Area3D" parent="Selectable1" unique_id=744169215]
 transform = Transform3D(0.9999998, -2.7983234e-08, -4.4703484e-08, -2.050344e-09, 0.99999994, -1.4351773e-08, 0, 1.14908385e-08, 0.9999999, 0.16506359, 3.0468748, 0.6160259)
@@ -2619,6 +2628,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.8660254, -0.49999997, -8.881784e-16, 0.5, 0.8660253, 8.881784e-16, 3.2509585e-16, -1.2132742e-15, 1, -4, 7, 2)
 transparency = 0.13
 mesh = ExtResource("7_tjnak")
+surface_material_override/0 = SubResource("ShaderMaterial_1wpl8")
 
 [node name="Option2Area" type="Area3D" parent="Selectable2" unique_id=1449444128]
 transform = Transform3D(1, -5.9604645e-08, -1.2904784e-08, 0, 1, 7.450581e-09, 0, 0, 1, 0, 0, 0)
@@ -2632,6 +2642,7 @@ unique_name_in_owner = true
 transform = Transform3D(-1, 1.0779758e-07, -1.4585073e-07, 1.3113413e-07, 1.0770072, -0.258819, 1.1585851e-07, -0.28858322, -0.96592575, 0, 4, -2)
 transparency = 0.1
 mesh = ExtResource("6_5lmpe")
+surface_material_override/0 = SubResource("ShaderMaterial_1wpl8")
 
 [node name="Option3Area" type="Area3D" parent="Selectable3" unique_id=593059350]
 transform = Transform3D(1, 2.8689506e-08, -1.07070605e-07, -2.8689504e-08, 1, 0, 1.0707059e-07, -2.9802322e-08, 1, -1.3113419e-07, 7.827031, 2.5881917)

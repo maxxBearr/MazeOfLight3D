@@ -1,18 +1,36 @@
 extends Area3D
 
 @export var item : ItemData
-@export var setCrystalLight : Color = Color.BLUE_VIOLET
+@export var setCrystalLight : Color
 var playerInrange :Player = null
 @onready var crystal_mesh_1: MeshInstance3D = %CrystalMesh1
 @onready var crystal_light: OmniLight3D = %CrystalLight
 @onready var crystal_select: Node3D = %CrystalSelect
-
+@export var crystalTypes : ItemData.CrystalTypes
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
 	body_exited.connect(onBodyExited)
 	crystal_select.visible = false
 	
+	
+	
+	if crystalTypes == ItemData.CrystalTypes.General:
+		setCrystalLight = Color.WHITE
+	elif crystalTypes == ItemData.CrystalTypes.Red:
+		setCrystalLight = Color.RED
+	elif crystalTypes == ItemData.CrystalTypes.Blue:
+		setCrystalLight = Color.BLUE
+	elif crystalTypes == ItemData.CrystalTypes.Green:
+		setCrystalLight = Color.GREEN
+	
+	
 	crystal_light.light_color = setCrystalLight
+	var mat = crystal_mesh_1.get_surface_override_material(0).duplicate()
+	crystal_mesh_1.set_surface_override_material(0, mat)
+	mat.set_shader_parameter("albedo", setCrystalLight)
+	
+	
+	
 	
 	var selectLight = crystal_select.get_node("CrystalSelectLight")
 	var selectLight2 = crystal_select.get_node("CrystalSelectLight2")
