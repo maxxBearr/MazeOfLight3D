@@ -186,15 +186,15 @@ requiredColor = Color(0.6662777, 0.39103043, 4.813075e-07, 1)
 tolerance = 0.12
 
 [node name="HiddenCrystal2" type="Node3D" parent="." unique_id=19864679]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -74, 3, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 3, 9)
 
 [node name="LightSensativeDoor" parent="HiddenCrystal2" unique_id=1496735439 instance=ExtResource("13_l8jgl")]
-transform = Transform3D(-1.5529143, -4.6444154e-07, 5.795555, 2.5333176e-07, 11, 3.301484e-07, -5.795555, 6.05272e-07, -1.5529143, -2, 0, 0)
+transform = Transform3D(-0.5500321, -8.501113, 1.1849998, -2.0527499, 2.277866, 4.42248, -7.931217, -2.6229023e-07, -1.2268021, 1.300003, -1.6000001, 0)
 requiredColor = Color(0.7647059, 0.47058824, 0, 1)
 tolerance = 0.12
 
 [node name="ItemPickUp" parent="HiddenCrystal2" unique_id=1487964896 instance=ExtResource("9_te3t8")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.0999985, 2, 0.9000006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0999985, 2, 0.9000006)
 setCrystalLight = Color(0.7641916, 0.47189975, 0, 1)
 
 [node name="LigthSensetiveWallCluster5" type="Node3D" parent="." unique_id=889356549]

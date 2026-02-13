@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://djyrj81bxqlsy"]
+[gd_scene format=3 uid="uid://djyrj81bxqlsy"]
 
-[ext_resource type="Script" uid="uid://cntqw7j4skpb8" path="res://damage_label.gd" id="1_kiy5u"]
+[ext_resource type="Script" uid="uid://cntqw7j4skpb8" path="res://UI/damage_label.gd" id="1_kiy5u"]
 
-[node name="DamageLabel" type="Label3D"]
+[node name="DamageLabel" type="Label3D" unique_id=1829952182]
 font_size = 200
 script = ExtResource("1_kiy5u")

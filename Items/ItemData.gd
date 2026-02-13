@@ -9,6 +9,9 @@ extends Resource
 @export var maxCharge : float = 200
 @export var currentCharge : float = 200
 
+enum CrystalTypes {General, Red, Green, Blue}
+@export var crystalType : CrystalTypes
+
 
 func getCurrentCharge()-> float:
 	return currentCharge / maxCharge

@@ -40,3 +40,5 @@ func isInOmniLight(targetPosition: Vector3) -> bool:
 
 func getCurrentColor() -> Color:
 	return currentLantern.currentColor
+func getCurrentColorH() -> float:
+	return currentLantern.currentColor.h

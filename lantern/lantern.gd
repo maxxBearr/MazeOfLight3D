@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	#cone.rotation += deg_to_rad(270)
 	if Input.is_action_pressed("Rotate"):
 		#print("shift is being pressed")
-		#print(hue)
+		print("hue = " + str(hue))
 		#print("rotation speed =")
 		#print(rotationSpeed)
 		#print("energy =")
