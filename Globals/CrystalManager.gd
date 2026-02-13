@@ -16,13 +16,15 @@ func _process(delta: float) -> void:
 	for item in range(InventoryManager.slots.size()):
 		var crystal = InventoryManager.slots[item]
 		if crystal != null and crystal.hasCharge():
-			crystal.currentCharge = max(0.0, crystal.currentCharge)
 			var strength = currentActiveColor[crystal.crystalType]
 			if strength == 1.0:
 				crystal.currentCharge -= delta
 			elif strength == 0.5:
-				crystal.currentCharge -= delta * 0.2
+				crystal.currentCharge -= delta * 0.5
+			elif strength < 0.5:
+				crystal.currentCharge -= delta * 0.1
 			crystalChargeChanged.emit(item)
+			crystal.currentCharge = max(0.0, crystal.currentCharge)
 			if crystal.currentCharge <= 0.01:
 				anyDepleted = true
 	if anyDepleted == true:

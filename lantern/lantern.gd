@@ -26,6 +26,7 @@ func _ready() -> void:
 	LanternManager.register(self)
 	InventoryManager.inventoryChanged.connect(recalcEffects)
 	CrystalManager.crystalDepleted.connect(recalcEffects)
+	CrystalManager.activeZoneChanged.connect(recalcEffects.unbind(1))
 	cone.light_energy = energy
 	cone.spot_attenuation = attenuation
 	cone.spot_angle = angle 
@@ -64,14 +65,19 @@ func recalcEffects():
 	energy = baseEnergy
 	var activeCrystals:Array[ItemData] = InventoryManager.getActiveCrystals()
 	for crystal in activeCrystals:
+		var activeStrength = CrystalManager.previousActivation[crystal.crystalType]
 		if crystal.effectType == "LanternSpeed":
-			rotationSpeed *= crystal.effectValue
+			var effect = crystal.effectValue
+			rotationSpeed *= lerp(1.0, effect, activeStrength)
 		if crystal.effectType == "Energy":
-			energy *= crystal.effectValue
+			var effect = crystal.effectValue
+			energy *= lerp(1.0, effect, activeStrength)
 		if crystal.effectType == "Angle":
-			angle *= crystal.effectValue
+			var effect = crystal.effectValue
+			angle *= lerp(1.0, effect, activeStrength)
 		if crystal.effectType == "Range":
-			lightRange *= crystal.effectValue
+			var effect = crystal.effectValue
+			lightRange *= lerp(1.0, effect, activeStrength)
 	
 	cone.light_energy = energy
 	cone.spot_angle = angle
