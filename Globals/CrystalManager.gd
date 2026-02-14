@@ -6,6 +6,8 @@ signal activeZoneChanged(crystalDictionary: Dictionary)
 var previousActivation= {}#this checks for color
 
 func _process(delta: float) -> void:
+	# this is crystal drain logic 
+
 	if get_tree().paused:
 		return
 	var currentActiveColor :Dictionary=checkActiveCatagory(LanternManager.getCurrentColor().h)
@@ -16,13 +18,14 @@ func _process(delta: float) -> void:
 	for item in range(InventoryManager.slots.size()):
 		var crystal = InventoryManager.slots[item]
 		if crystal != null and crystal.hasCharge():
+			var decayDelay = CrystalManager.getEffectStrength(ItemData.EffectTypes.SlowerDrain)
 			var strength = currentActiveColor[crystal.crystalType]
 			if strength == 1.0:
-				crystal.currentCharge -= delta
+				crystal.currentCharge -= delta / decayDelay
 			elif strength == 0.5:
-				crystal.currentCharge -= delta * 0.5
+				crystal.currentCharge -= (delta * 0.5) / decayDelay
 			elif strength < 0.5:
-				crystal.currentCharge -= delta * 0.1
+				crystal.currentCharge -= (delta * 0.1) / decayDelay
 			crystalChargeChanged.emit(item)
 			crystal.currentCharge = max(0.0, crystal.currentCharge)
 			if crystal.currentCharge <= 0.01:
@@ -66,7 +69,15 @@ func checkActiveCatagory(lanternHue:float)-> Dictionary:
 	return crystalDict
 
 
-
+func getEffectStrength(efctType:ItemData.EffectTypes)-> float:
+	var finalMult = 1.0 
+	for item in range(InventoryManager.slots.size()):
+		var crystal:ItemData = InventoryManager.slots[item]
+		if crystal != null and crystal.hasCharge():
+			if crystal.effectType == efctType:
+				var strength = previousActivation[crystal.crystalType]
+				finalMult *= lerp(1.0, crystal.effectValue, strength )
+	return finalMult
 
 
 

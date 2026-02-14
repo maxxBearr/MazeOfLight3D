@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dbbn8d45ghxby"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_28d5r"]
+
+[resource]
+script = ExtResource("1_28d5r")
+itemName = "DamageReduction"
+description = "Take less damage during blue light"
+effectValue = 2.0
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 5
+metadata/_custom_type_script = "uid://chabwrui44qbp"

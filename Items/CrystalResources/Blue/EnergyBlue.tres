@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cxurwv84xyvkt"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_odq7n"]
+
+[resource]
+script = ExtResource("1_odq7n")
+itemName = "Energy Crystal"
+description = "Increase light brightness by 70%"
+effectValue = 1.7
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 2
+metadata/_custom_type_script = "uid://chabwrui44qbp"

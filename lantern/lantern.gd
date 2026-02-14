@@ -20,7 +20,7 @@ var baseEnergy : float
 var baseRotationSpeed : float
 var baseAngle : float
 var baseRange : float
-
+var omniRange : float = 11.0
 
 func _ready() -> void:
 	LanternManager.register(self)
@@ -35,6 +35,7 @@ func _ready() -> void:
 	baseEnergy = energy
 	baseRange = lightRange
 	baseRotationSpeed = rotationSpeed
+	omni_light_3d.omni_range = omniRange
 func _process(delta: float) -> void:
 	#cone.look_at(get_global_mouse_position())
 	#cone.rotation += deg_to_rad(270)
@@ -52,9 +53,7 @@ func _process(delta: float) -> void:
 		omni_light_3d.light_color = currentColor
 		
 		
-		
-				
-	
+
 
 
 
@@ -78,10 +77,20 @@ func recalcEffects():
 		if crystal.effectType == crystal.EffectTypes.LightRange:
 			var effect = crystal.effectValue
 			lightRange *= lerp(1.0, effect, activeStrength)
-
+		if crystal.effectType == crystal.EffectTypes.DamageMult:
+			var effect = crystal.effectValue
+			damageMutliplier *= lerp(1.0, effect, activeStrength)
+		if crystal.effectType == crystal.EffectTypes.EnergyAngleMinusRange:
+			var effect = crystal.effectValue
+			energy *= lerp(1.0, effect, activeStrength)
+			angle *= lerp(1.0, effect, activeStrength)
+			lightRange *= 0.5
+		if crystal.effectType == crystal.EffectTypes.IncreaseAOE:
+			var effect = crystal.effectValue
+			omniRange *= lerp(1.0, effect, activeStrength)
 	
 	cone.light_energy = energy
 	cone.spot_angle = angle
-	cone.spot_range = lightRange
-	omni_light_3d.omni_range = ((energy * 1.5 + angle * 1.1 + lightRange * 1.3) / 3)
+	cone.spot_range = lightRange 
+	omni_light_3d.omni_range = omniRange + ((energy * 1.5 + angle * 1.1 + lightRange * 1.3) / 3)
 	print("omni range == " + str(omni_light_3d.omni_range))

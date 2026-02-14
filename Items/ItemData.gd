@@ -11,7 +11,7 @@ extends Resource
 enum CrystalTypes {General, Red, Green, Blue}
 @export var crystalType : CrystalTypes
 
-enum EffectTypes {RotationSpeed, Angle, Energy, DamageMult, WalkSpeed, DamageReduct, LightRange, SourceRadius, ExtraHit}
+enum EffectTypes {RotationSpeed, Angle, Energy, DamageMult, WalkSpeed, DamageReduct, LightRange, SourceRadius, SlowEnemy, IncreaseAOE, IncreaseCharge, SlowerDrain, aoeDamage, HealOverTime, RechargeAllCrsyatls,DoubleALLDamage, EnergyAngleMinusRange}
 @export var effectType : EffectTypes
 
 

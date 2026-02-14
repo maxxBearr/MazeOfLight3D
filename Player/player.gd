@@ -3,8 +3,8 @@ extends CharacterBody3D
 
 @export var SPEED = 5.0
 @export var ROTATION_SPEED = 10.0
-@export var maxhealth: int = 10
-@export var currentHealth : int
+@export var maxhealth: float = 10.0
+@export var currentHealth : float
 @onready var camera : Camera3D = get_viewport().get_camera_3d()
 @onready var omni_light_3d: OmniLight3D = %OmniLight3D
 @onready var animTree = %RiggedAnimChar/AnimationTree
@@ -12,7 +12,7 @@ extends CharacterBody3D
 @onready var animPlayer = %RiggedAnimChar/AnimationPlayer
 var currentAnim = ""
 @onready var footsteps: AudioStreamPlayer3D = %Footsteps
-
+var baseSpeed 
 signal healthChanged(newHealth:int)
 func _ready() -> void:
 	
@@ -23,7 +23,7 @@ func _ready() -> void:
 	print("AnimTree anim_player: ", animTree.anim_player)
 	print("AnimTree root node: ", animTree.get("root_node"))
 	animTree.active = true
-	
+	baseSpeed = SPEED
 	print("All parameters:")
 	for prop in animTree.get_property_list():
 		if prop.name.begins_with("parameters/"):
@@ -38,7 +38,13 @@ func _physics_process(delta: float) -> void:
 	# Get input direction
 	var input_dir := Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
 	var direction := Vector3(input_dir.x, 0, input_dir.y).normalized()
-	
+
+	if CrystalManager.getEffectStrength(ItemData.EffectTypes.WalkSpeed) > 1.0:
+		SPEED = baseSpeed
+		var newSPeed = baseSpeed * CrystalManager.getEffectStrength(ItemData.EffectTypes.WalkSpeed)
+		SPEED = newSPeed
+	else:
+		SPEED = baseSpeed
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -57,6 +63,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		footsteps.stop()
 	move_and_slide()
+	
+	if CrystalManager.getEffectStrength(ItemData.EffectTypes.HealOverTime) > 1.0:
+		currentHealth += delta * CrystalManager.getEffectStrength(ItemData.EffectTypes.HealOverTime) 
+		currentHealth=  clamp(currentHealth, 0.0, maxhealth)
+		
+
+
+
 	
 
 func updateAnimation(localDir:Vector3):
@@ -88,7 +102,9 @@ func playAnimation(animName: String) -> void:
 		animTree.set("parameters/Transition/transition_request", animName)
 		print("PlayingP: ", animName)
 		
-func takeDamage(amount: int):
+func takeDamage(amount: float):
+	if CrystalManager.getEffectStrength(ItemData.EffectTypes.DoubleALLDamage) > 1.0:
+		amount *= 2.0
 	currentHealth -= amount
 	healthChanged.emit(currentHealth)
 	print(currentHealth)

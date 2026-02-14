@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ba2gpk0ujix58"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_2oy7o"]
+
+[resource]
+script = ExtResource("1_2oy7o")
+itemName = "Slow Enemies"
+description = "While enemies are in blue, they are slowed"
+effectValue = 2.0
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 8
+metadata/_custom_type_script = "uid://chabwrui44qbp"

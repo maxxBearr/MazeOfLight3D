@@ -4,7 +4,7 @@ extends Area3D
 @export var health : float = 100
 @export var speed : float = 2.0
 @export var inherentColor : Color
-@export var damage: int = 1
+@export var damage: float = 1.0
 ## energy tends to be around values of 3.5-5
 @export_range(1.0, 40, 0.01) var energyResistance : float = 5
 ## range tends to hold 6-15
@@ -18,11 +18,15 @@ var labelCooldown :float = 0.0
 @onready var deal_damage_sound: AudioStreamPlayer3D = %DealDamageSound
 @onready var take_damage_sound: AudioStreamPlayer3D = %TakeDamageSound
 var totalDamage : float
+var coneDamage: float
+var omniLightDamage : float = 0.0
+var combindedDamage = coneDamage + omniLightDamage
 var takingDaming : bool 
 var startingHealth
 @onready var basic_sound: AudioStreamPlayer3D = %BasicSound
-
+var baseSpeed
 func _ready() -> void:
+	baseSpeed = speed
 	body_entered.connect(onBodyEntered)
 	startingHealth = health
 	var ownLight : OmniLight3D = self.get_node("OmniLight3D")
@@ -38,8 +42,18 @@ func _physics_process(delta: float) -> void:
 	if LanternManager.isInCone(global_position) == true:
 		takingDaming = true
 		takeDamage(delta)
-		print(health)
-	else:
+		if CrystalManager.getEffectStrength(ItemData.EffectTypes.SlowEnemy) > 1.0:
+			speed = baseSpeed
+			var newSPeed = baseSpeed / CrystalManager.getEffectStrength(ItemData.EffectTypes.SlowEnemy)
+			speed = newSPeed
+		else:
+			speed= baseSpeed
+		#print(health)
+	if LanternManager.isInOmniLight(global_position) == true:
+		if CrystalManager.getEffectStrength(ItemData.EffectTypes.aoeDamage) > 1.0:
+			takingDaming = true
+			takeAOEdamage(delta)
+	elif LanternManager.isInCone(global_position) == false and LanternManager.isInOmniLight(global_position) == false:
 		takingDaming = false
 		stopTakeDamageSound()
 	if health <= 0:
@@ -57,7 +71,7 @@ func onBodyEntered(body):
 	if body is Player:
 		var tween = create_tween()
 		tween.tween_property(get_node("GhostMesh"), "transparency", 1.0,1.0)
-		body.takeDamage(damage) 
+		body.takeDamage(damage / CrystalManager.getEffectStrength(ItemData.EffectTypes.DamageReduct))
 		deal_damage_sound.play()
 		deal_damage_sound.finished.connect(death)
 	
@@ -86,6 +100,7 @@ func takeDamage(delta: float):
 	var cDamage 
 	var damageMult = LanternManager.currentLantern.damageMutliplier
 	var damageColor : Color
+
 	if shorestDist >= tolerance:
 		if shorestDist < 0.62 and shorestDist > 0.38:
 			cDamage = startingHealth * 0.2
@@ -93,13 +108,16 @@ func takeDamage(delta: float):
 		else:
 			cDamage = startingHealth * 0.08
 			damageColor = Color.YELLOW
-		health -= ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta
-		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta
+		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta * 	CrystalManager.getEffectStrength(ItemData.EffectTypes.DoubleALLDamage)
+		coneDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta
+		health -= totalDamage
 	else:
 		cDamage = 0.0
-		health -= ((eDamage + rDamage + aDamage + cDamage) * 0.4 * damageMult) * delta
-		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * 0.4 * damageMult) * delta
+		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta * 	CrystalManager.getEffectStrength(ItemData.EffectTypes.DoubleALLDamage)
+		health -= totalDamage
+		coneDamage = ((eDamage + rDamage + aDamage + cDamage) * 0.4 * damageMult) * delta
 		damageColor = Color.RED
+	
 	updateTakeDamageSound(totalDamage)
 	labelCooldown -= delta
 	if labelCooldown <= 0.0:
@@ -134,3 +152,33 @@ func spawnDamageLabel(amount : int, color : Color):
 	label.global_position = global_position + Vector3(0,1,0)
 	label.text = "-" + str(snapped(amount, 0.01))
 	label.modulate = color
+
+func takeAOEdamage(delta: float):
+	var lightHue = LanternManager.getCurrentColor().h 
+	var eDamage = LanternManager.currentLantern.energy / energyResistance
+	var rDamage = LanternManager.currentLantern.lightRange / rangeResistance
+	var aDamage = LanternManager.currentLantern.angle / angleResistance
+	var directDist = abs(lightHue - inherentColor.h)
+	var wrapDist = 1.0 - directDist
+	var shorestDist = min(directDist, wrapDist)
+	var tolerance = 0.1
+	var cDamage 
+	var damageMult = LanternManager.currentLantern.damageMutliplier
+	var damageColor : Color
+	if shorestDist >= tolerance:
+		if shorestDist < 0.62 and shorestDist > 0.38:
+			cDamage = startingHealth * 0.2
+		else:
+			cDamage = startingHealth * 0.08
+		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta * 	CrystalManager.getEffectStrength(ItemData.EffectTypes.DoubleALLDamage)
+		health -= totalDamage *0.8
+	else:
+		cDamage = 0.0
+		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta * 	CrystalManager.getEffectStrength(ItemData.EffectTypes.DoubleALLDamage)
+		health -= totalDamage * 0.8
+	damageColor = Color.RED
+	updateTakeDamageSound(totalDamage)
+	labelCooldown -= delta
+	if labelCooldown <= 0.0:
+		spawnDamageLabel(totalDamage, damageColor)
+		labelCooldown = 0.23

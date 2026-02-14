@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dtvc76t5tne1a"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_x2vsm"]
+
+[resource]
+script = ExtResource("1_x2vsm")
+itemName = "IndriectDamageCrystal"
+description = "Indirect light deals damage to enemies"
+effectValue = 0.8
+maxCharge = 300.0
+currentCharge = 300.0
+crystalType = 1
+effectType = 12
+metadata/_custom_type_script = "uid://chabwrui44qbp"

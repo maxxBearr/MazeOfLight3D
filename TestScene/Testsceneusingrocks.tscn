@@ -15,10 +15,10 @@
 
 [sub_resource type="Environment" id="Environment_wicfy"]
 background_mode = 1
-background_color = Color(0.17402825, 0.17402825, 0.17402819, 1)
+background_color = Color(0.2921899, 0.29219007, 0.29219, 1)
 background_energy_multiplier = 0.22
 ambient_light_source = 2
-ambient_light_color = Color(0.23874435, 0.23874438, 0.23874435, 1)
+ambient_light_color = Color(0.30876946, 0.30876935, 0.3087693, 1)
 ambient_light_energy = 0.46
 tonemap_white = 3.4
 fog_enabled = true

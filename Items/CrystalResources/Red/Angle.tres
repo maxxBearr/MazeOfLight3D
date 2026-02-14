@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ucqng5gva0mb"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_5vofy"]
+
+[resource]
+script = ExtResource("1_5vofy")
+itemName = "DamageCrystal"
+description = "Deal 30% more damage to enemies"
+effectValue = 1.3
+maxCharge = 300.0
+currentCharge = 300.0
+crystalType = 1
+effectType = 3
+metadata/_custom_type_script = "uid://chabwrui44qbp"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3nc3j3yu7w4r"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_jvetn"]
+
+[resource]
+script = ExtResource("1_jvetn")
+itemName = "HealthCrystal"
+description = "Slowly heal while green"
+effectValue = 1.01
+maxCharge = 350.0
+currentCharge = 350.0
+crystalType = 2
+effectType = 13
+metadata/_custom_type_script = "uid://chabwrui44qbp"

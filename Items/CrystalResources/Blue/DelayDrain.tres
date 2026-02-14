@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3b47l8va5l0f"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_1lv7i"]
+
+[resource]
+script = ExtResource("1_1lv7i")
+itemName = "Delay Crystal Decay"
+description = "Delay the rate at which crystals decay"
+effectValue = 2.0
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 11
+metadata/_custom_type_script = "uid://chabwrui44qbp"

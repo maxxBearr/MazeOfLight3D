@@ -10,11 +10,26 @@
 [ext_resource type="PackedScene" uid="uid://c5t7flpwokm3l" path="res://Items/CrystalModels/crystal_18.fbx" id="5_snbjm"]
 [ext_resource type="ArrayMesh" uid="uid://dro3vpc3lofmk" path="res://Items/CrystalModels/SelectCrystalMesh3.tres" id="6_5lmpe"]
 [ext_resource type="Resource" uid="uid://dl8xp4533f7ah" path="res://Items/CrystalResources/General/AngleCrystal.tres" id="6_eehhh"]
+[ext_resource type="Resource" uid="uid://dbbn8d45ghxby" path="res://Items/CrystalResources/Blue/DamageReduction.tres" id="7_8vln1"]
 [ext_resource type="ArrayMesh" uid="uid://b47cerxno88pv" path="res://Items/CrystalModels/SelectCrystalMesh2.tres" id="7_tjnak"]
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="8_2r6hd"]
+[ext_resource type="Resource" uid="uid://c3b47l8va5l0f" path="res://Items/CrystalResources/Blue/DelayDrain.tres" id="8_ma84y"]
+[ext_resource type="Resource" uid="uid://cxurwv84xyvkt" path="res://Items/CrystalResources/Blue/EnergyBlue.tres" id="9_i4d51"]
+[ext_resource type="Resource" uid="uid://bwsj4h4tcmakc" path="res://Items/CrystalResources/Blue/IncreaseAOE.tres" id="10_x43yw"]
+[ext_resource type="Resource" uid="uid://ba2gpk0ujix58" path="res://Items/CrystalResources/Blue/SlowerEnemies.tres" id="11_25vkn"]
 [ext_resource type="AudioStream" uid="uid://resxyto6xrws" path="res://Sounds/CrystalBreakingSounds/icecrack.wav" id="11_tjnak"]
+[ext_resource type="Resource" uid="uid://c3nc3j3yu7w4r" path="res://Items/CrystalResources/Green/Health.tres" id="12_6cp8b"]
 [ext_resource type="AudioStream" uid="uid://b4l4mbsuaa8yj" path="res://Sounds/CrystalBreakingSounds/breaking-glass-1-468383.mp3" id="12_jtyqc"]
 [ext_resource type="Texture2D" uid="uid://pq0s83jmh07r" path="res://Items/CrystalModels/crystal_5_0.png" id="13_1wpl8"]
+[ext_resource type="Resource" uid="uid://leij8m5a2m1v" path="res://Items/CrystalResources/Green/Range.tres" id="13_pwihh"]
+[ext_resource type="Resource" uid="uid://bywcemvtk58ec" path="res://Items/CrystalResources/Green/RechargeAllCrystals.tres" id="14_1n058"]
+[ext_resource type="Resource" uid="uid://bec5n2a3ilw84" path="res://Items/CrystalResources/Green/RotationSpeed.tres" id="15_ih78w"]
+[ext_resource type="Resource" uid="uid://bpll7xp8i0df0" path="res://Items/CrystalResources/Green/WalkSpeed.tres" id="16_j57qd"]
+[ext_resource type="Resource" uid="uid://ucqng5gva0mb" path="res://Items/CrystalResources/Red/Angle.tres" id="17_gw2rp"]
+[ext_resource type="Resource" uid="uid://dtvc76t5tne1a" path="res://Items/CrystalResources/Red/AOEdamage.tres" id="18_hjlcr"]
+[ext_resource type="Resource" uid="uid://bne4fe6i6uibd" path="res://Items/CrystalResources/Red/Damage.tres" id="19_151li"]
+[ext_resource type="Resource" uid="uid://f6icl2tmmjqt" path="res://Items/CrystalResources/Red/DblEnergyAngleHlfRng.tres" id="20_t5s16"]
+[ext_resource type="Resource" uid="uid://dgs3yiuois1la" path="res://Items/CrystalResources/Red/DoubleALlDamage.tres" id="21_51vgo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1wpl8"]
 render_priority = 0
@@ -2668,7 +2683,7 @@ _data = {
 [node name="CrystalSelect" type="Node3D" unique_id=1965200243]
 process_mode = 3
 script = ExtResource("1_7lfsd")
-possibleItems = Array[ExtResource("2_5lmpe")]([ExtResource("3_tjnak"), ExtResource("4_jtyqc"), ExtResource("5_eehhh"), ExtResource("6_eehhh")])
+possibleItems = Array[ExtResource("2_5lmpe")]([ExtResource("3_tjnak"), ExtResource("4_jtyqc"), ExtResource("5_eehhh"), ExtResource("6_eehhh"), ExtResource("7_8vln1"), ExtResource("8_ma84y"), ExtResource("9_i4d51"), ExtResource("10_x43yw"), ExtResource("11_25vkn"), ExtResource("12_6cp8b"), ExtResource("13_pwihh"), ExtResource("14_1n058"), ExtResource("15_ih78w"), ExtResource("16_j57qd"), ExtResource("17_gw2rp"), ExtResource("18_hjlcr"), ExtResource("19_151li"), ExtResource("20_t5s16"), ExtResource("21_51vgo")])
 
 [node name="Selectable1" type="MeshInstance3D" parent="." unique_id=141536215]
 unique_name_in_owner = true
@@ -2714,42 +2729,42 @@ shape = SubResource("CapsuleShape3D_delg3")
 
 [node name="crystal_16" parent="." unique_id=509429960 instance=ExtResource("4_kwavh")]
 
-[node name="crystal_16" parent="crystal_16" index="0"]
+[node name="crystal_16" parent="crystal_16" index="0" unique_id=1074241082]
 surface_material_override/0 = SubResource("ShaderMaterial_2k5us")
 
 [node name="crystal_17" parent="." unique_id=2098181117 instance=ExtResource("4_kwavh")]
 
-[node name="crystal_16" parent="crystal_17" index="0"]
+[node name="crystal_16" parent="crystal_17" index="0" unique_id=1074241082]
 surface_material_override/0 = SubResource("ShaderMaterial_qxrp2")
 
 [node name="crystal_18" parent="." unique_id=548979390 instance=ExtResource("5_snbjm")]
 transform = Transform3D(0.9330128, 0.08709682, -0.34914386, -0.25881907, 0.83651644, -0.48296294, 0.25, 0.5409757, 0.8030226, 0, 2, 2)
 
-[node name="crystal_18" parent="crystal_18" index="0"]
+[node name="crystal_18" parent="crystal_18" index="0" unique_id=2095386567]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_20" parent="." unique_id=745625553 instance=ExtResource("5_snbjm")]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, -2, 1, 2)
 
-[node name="crystal_18" parent="crystal_20" index="0"]
+[node name="crystal_18" parent="crystal_20" index="0" unique_id=2095386567]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_7" parent="." unique_id=1104229321 instance=ExtResource("5_snbjm")]
 transform = Transform3D(-4.371139e-08, 0.5, 0.8660254, 0, 0.8660254, -0.5, -1, -2.1855694e-08, -3.7855173e-08, 0, 4, -1)
 
-[node name="crystal_18" parent="crystal_7" index="0"]
+[node name="crystal_18" parent="crystal_7" index="0" unique_id=2095386567]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_19" parent="." unique_id=97037484 instance=ExtResource("5_snbjm")]
 transform = Transform3D(-4.371139e-08, -0.5, -0.8660254, 0, 0.8660254, -0.5, 1, -2.1855694e-08, -3.7855173e-08, -3, 1, 2)
 
-[node name="crystal_18" parent="crystal_19" index="0"]
+[node name="crystal_18" parent="crystal_19" index="0" unique_id=2095386567]
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 
 [node name="crystal_6" parent="." unique_id=260867328 instance=ExtResource("1_qcxqk")]
 transform = Transform3D(0.8365162, -0.48296297, -0.258819, 0.5, 0.8660254, 5.4542024e-09, 0.22414385, -0.12940954, 0.96592575, 0, 1, -2)
 
-[node name="crystal_5" parent="crystal_6" index="0"]
+[node name="crystal_5" parent="crystal_6" index="0" unique_id=104987585]
 mesh = SubResource("ArrayMesh_yo7e7")
 surface_material_override/0 = SubResource("ShaderMaterial_yo7e7")
 

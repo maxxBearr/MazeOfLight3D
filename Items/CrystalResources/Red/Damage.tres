@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bne4fe6i6uibd"]
+
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_phsvi"]
+
+[resource]
+script = ExtResource("1_phsvi")
+itemName = "AngleCrystal"
+description = "Increase Light width by 40%"
+effectValue = 1.4
+maxCharge = 300.0
+currentCharge = 300.0
+crystalType = 1
+effectType = 1
+metadata/_custom_type_script = "uid://chabwrui44qbp"
