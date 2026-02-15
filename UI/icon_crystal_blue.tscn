@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4r0rfysct3la"]
+
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_668tc"]
+
+[node name="IconCrystalBlue" type="Sprite2D" unique_id=2008974900]
+self_modulate = Color(0.05882353, 0.35686275, 0.87058824, 1)
+texture = ExtResource("1_668tc")

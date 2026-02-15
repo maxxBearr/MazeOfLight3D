@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://no0ku48evmpg"]
+
+[ext_resource type="Texture2D" uid="uid://b348urhaxejbt" path="res://UI/CrystaliconSlotPNG.png" id="1_iflff"]
+
+[node name="IconCrystalBlue" type="Sprite2D" unique_id=2008974900]
+self_modulate = Color(0.05882353, 0.35686275, 0.87058824, 1)
+texture = ExtResource("1_iflff")

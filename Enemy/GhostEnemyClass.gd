@@ -17,6 +17,7 @@ var labelCooldown :float = 0.0
 @onready var death_sound: AudioStreamPlayer3D = %DeathSound
 @onready var deal_damage_sound: AudioStreamPlayer3D = %DealDamageSound
 @onready var take_damage_sound: AudioStreamPlayer3D = %TakeDamageSound
+@onready var take_damage_sound_2: AudioStreamPlayer3D = %TakeDamageSound2
 var totalDamage : float
 var coneDamage: float
 var omniLightDamage : float = 0.0
@@ -25,6 +26,11 @@ var takingDaming : bool
 var startingHealth
 @onready var basic_sound: AudioStreamPlayer3D = %BasicSound
 var baseSpeed
+var stopConeTween : Tween
+var stopAOEtween : Tween
+
+
+
 func _ready() -> void:
 	baseSpeed = speed
 	body_entered.connect(onBodyEntered)
@@ -48,14 +54,20 @@ func _physics_process(delta: float) -> void:
 			speed = newSPeed
 		else:
 			speed= baseSpeed
+	else:
+		stopTakeDamageSound()
 		#print(health)
 	if LanternManager.isInOmniLight(global_position) == true:
 		if CrystalManager.getEffectStrength(ItemData.EffectTypes.aoeDamage) > 1.0:
 			takingDaming = true
 			takeAOEdamage(delta)
-	elif LanternManager.isInCone(global_position) == false and LanternManager.isInOmniLight(global_position) == false:
+	else:
+		stopTakingAOEDamageSound()
+	if LanternManager.isInCone(global_position) == false and LanternManager.isInOmniLight(global_position) == false:
 		takingDaming = false
 		stopTakeDamageSound()
+		stopTakingAOEDamageSound()
+		speed = baseSpeed
 	if health <= 0:
 		set_physics_process(false)
 		var tween = create_tween()
@@ -136,16 +148,32 @@ func updateTakeDamageSound(damageAmount:float):
 	take_damage_sound.pitch_scale = lerp(1.0, 2.7, intensity)
 	take_damage_sound.volume_db = lerp(-6.0, 0.0, intensity)
 	
+func updateTakeDamageAOESound(damageAmount:float):
+	if take_damage_sound_2.playing == false:
+		take_damage_sound_2.play()
+	var minDamage = 0.0
+	var maxDamage = 3.0
+	var intensity = remap(damageAmount, minDamage, maxDamage, 0.0, 1.0)
+	take_damage_sound_2.pitch_scale = lerp(0.8, 2.0, intensity)
+	take_damage_sound_2.volume_db = lerp(-10.0, -4.0, intensity)
+	
 	
 	
 func stopTakeDamageSound():
 	if take_damage_sound.playing:
-		var stopTween = create_tween()
-		stopTween.tween_property(take_damage_sound,"volume_db", -40, 3.0)
-		stopTween.finished.connect(func():
-			take_damage_sound.stop())
+		if stopConeTween and stopConeTween.is_running():
+			stopConeTween = create_tween()
+			stopConeTween.tween_property(take_damage_sound,"volume_db", -40, 3.0)
+			stopConeTween.finished.connect(func():
+				take_damage_sound.stop())
 
-
+func stopTakingAOEDamageSound():
+	if take_damage_sound_2.playing:
+		if stopAOEtween and stopAOEtween.is_running():
+			stopAOEtween = create_tween()
+			stopAOEtween.tween_property(take_damage_sound_2,"volume_db", -40, 3.0)
+			stopAOEtween.finished.connect(func():
+				take_damage_sound_2.stop())
 func spawnDamageLabel(amount : int, color : Color):
 	var label = damageLabelScene.instantiate()
 	get_tree().root.add_child(label)
@@ -177,7 +205,7 @@ func takeAOEdamage(delta: float):
 		totalDamage = ((eDamage + rDamage + aDamage + cDamage) * damageMult) * delta * 	CrystalManager.getEffectStrength(ItemData.EffectTypes.DoubleALLDamage)
 		health -= totalDamage * 0.8
 	damageColor = Color.RED
-	updateTakeDamageSound(totalDamage)
+	updateTakeDamageAOESound(totalDamage)
 	labelCooldown -= delta
 	if labelCooldown <= 0.0:
 		spawnDamageLabel(totalDamage, damageColor)

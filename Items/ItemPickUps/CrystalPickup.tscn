@@ -4,6 +4,20 @@
 [ext_resource type="ArrayMesh" uid="uid://bwy1jq27b72c3" path="res://Items/CrystalModels/CrystalMesh1.tres" id="2_p0hxh"]
 [ext_resource type="Shader" uid="uid://bs57s6huva55j" path="res://Shaders/EnvShader.gdshader" id="3_dhlux"]
 [ext_resource type="PackedScene" uid="uid://cxbhubqu1f3ub" path="res://Items/ItemPickUps/CrystalSelect.tscn" id="3_uaapb"]
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="5_37qpm"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="6_drtsh"]
+[ext_resource type="Resource" uid="uid://dytlmt6r1btb6" path="res://Items/CrystalResources/General/RangeCrystal.tres" id="7_we0bi"]
+[ext_resource type="Resource" uid="uid://gxcf228vh3ev" path="res://Items/CrystalResources/General/RotationCrystal.tres" id="8_vjkac"]
+[ext_resource type="Resource" uid="uid://dl8xp4533f7ah" path="res://Items/CrystalResources/General/AngleCrystal.tres" id="9_xfg6e"]
+[ext_resource type="Resource" uid="uid://dbbn8d45ghxby" path="res://Items/CrystalResources/Blue/DamageReduction.tres" id="10_ubvax"]
+[ext_resource type="Resource" uid="uid://bywcemvtk58ec" path="res://Items/CrystalResources/Green/RechargeAllCrystals.tres" id="11_it837"]
+[ext_resource type="Resource" uid="uid://bec5n2a3ilw84" path="res://Items/CrystalResources/Green/RotationSpeed.tres" id="12_3rqmd"]
+[ext_resource type="Resource" uid="uid://bpll7xp8i0df0" path="res://Items/CrystalResources/Green/WalkSpeed.tres" id="13_k26qi"]
+[ext_resource type="Resource" uid="uid://ucqng5gva0mb" path="res://Items/CrystalResources/Red/Angle.tres" id="14_jawi6"]
+[ext_resource type="Resource" uid="uid://dtvc76t5tne1a" path="res://Items/CrystalResources/Red/AOEdamage.tres" id="15_eqbyf"]
+[ext_resource type="Resource" uid="uid://bne4fe6i6uibd" path="res://Items/CrystalResources/Red/Damage.tres" id="16_nsjsw"]
+[ext_resource type="Resource" uid="uid://f6icl2tmmjqt" path="res://Items/CrystalResources/Red/DblEnergyAngleHlfRng.tres" id="17_y7lwq"]
+[ext_resource type="Resource" uid="uid://dgs3yiuois1la" path="res://Items/CrystalResources/Red/DoubleALlDamage.tres" id="18_ncjri"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cp2lt"]
 radius = 3.0
@@ -14,6 +28,79 @@ shader = ExtResource("3_dhlux")
 shader_parameter/albedo = Color(0.5929701, 0.1634, 0.86, 1)
 shader_parameter/shading_levels = 5
 shader_parameter/min_brightness = 0.0
+
+[sub_resource type="Resource" id="Resource_kyudt"]
+script = ExtResource("5_37qpm")
+itemName = "Energy Crystal"
+description = "Increase Light Intensity by 80%%"
+effectValue = 1.85
+metadata/_custom_type_script = "uid://chabwrui44qbp"
+
+[sub_resource type="Resource" id="Resource_aaeo0"]
+script = ExtResource("5_37qpm")
+itemName = "Delay Crystal Decay"
+description = "Delay the rate at which crystals decay"
+effectValue = 2.0
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 11
+metadata/_custom_type_script = "uid://chabwrui44qbp"
+
+[sub_resource type="Resource" id="Resource_ykcmc"]
+script = ExtResource("5_37qpm")
+itemName = "Energy Crystal"
+description = "Increase light brightness by 70%"
+effectValue = 1.7
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 2
+metadata/_custom_type_script = "uid://chabwrui44qbp"
+
+[sub_resource type="Resource" id="Resource_m3myv"]
+script = ExtResource("5_37qpm")
+itemName = "LargerSource"
+description = "Increase the ambient light emitted by the lantern by 40%"
+effectValue = 1.4
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 9
+metadata/_custom_type_script = "uid://chabwrui44qbp"
+
+[sub_resource type="Resource" id="Resource_tmrrl"]
+script = ExtResource("5_37qpm")
+itemName = "Slow Enemies"
+description = "While enemies are in blue, they are slowed"
+effectValue = 2.0
+maxCharge = 400.0
+currentCharge = 400.0
+crystalType = 3
+effectType = 8
+metadata/_custom_type_script = "uid://chabwrui44qbp"
+
+[sub_resource type="Resource" id="Resource_jfobr"]
+script = ExtResource("5_37qpm")
+itemName = "HealthCrystal"
+description = "Slowly heal while green"
+effectValue = 1.01
+maxCharge = 350.0
+currentCharge = 350.0
+crystalType = 2
+effectType = 13
+metadata/_custom_type_script = "uid://chabwrui44qbp"
+
+[sub_resource type="Resource" id="Resource_ycmt8"]
+script = ExtResource("5_37qpm")
+itemName = "RangeCrystal"
+description = "Increase Light Range by 40%"
+effectValue = 1.4
+maxCharge = 350.0
+currentCharge = 350.0
+crystalType = 2
+effectType = 6
+metadata/_custom_type_script = "uid://chabwrui44qbp"
 
 [node name="ItemPickUp" type="Area3D" unique_id=273662344]
 process_mode = 3
@@ -46,3 +133,4 @@ omni_attenuation = 2.0
 [node name="CrystalSelect" parent="." unique_id=721960087 instance=ExtResource("3_uaapb")]
 unique_name_in_owner = true
 visible = false
+possibleItems = Array[ExtResource("5_37qpm")]([SubResource("Resource_kyudt"), ExtResource("7_we0bi"), ExtResource("8_vjkac"), ExtResource("9_xfg6e"), ExtResource("10_ubvax"), SubResource("Resource_aaeo0"), SubResource("Resource_ykcmc"), SubResource("Resource_m3myv"), SubResource("Resource_tmrrl"), SubResource("Resource_jfobr"), SubResource("Resource_ycmt8"), ExtResource("11_it837"), ExtResource("12_3rqmd"), ExtResource("13_k26qi"), ExtResource("14_jawi6"), ExtResource("15_eqbyf"), ExtResource("16_nsjsw"), ExtResource("17_y7lwq"), ExtResource("18_ncjri")])

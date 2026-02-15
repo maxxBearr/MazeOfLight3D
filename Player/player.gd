@@ -64,10 +64,6 @@ func _physics_process(delta: float) -> void:
 		footsteps.stop()
 	move_and_slide()
 	
-	if CrystalManager.getEffectStrength(ItemData.EffectTypes.HealOverTime) > 1.0:
-		currentHealth += delta * CrystalManager.getEffectStrength(ItemData.EffectTypes.HealOverTime) 
-		currentHealth=  clamp(currentHealth, 0.0, maxhealth)
-		
 
 
 

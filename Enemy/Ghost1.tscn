@@ -75,3 +75,10 @@ stream = ExtResource("9_1eprb")
 volume_db = -6.0
 pitch_scale = 2.7
 bus = &"GhostTakeDamage"
+
+[node name="TakeDamageSound2" type="AudioStreamPlayer3D" parent="." unique_id=1026630110]
+unique_name_in_owner = true
+stream = ExtResource("9_1eprb")
+volume_db = -6.0
+pitch_scale = 2.7
+bus = &"GhostTakeDamage"

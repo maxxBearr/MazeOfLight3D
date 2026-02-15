@@ -3,7 +3,7 @@ extends Resource
 
 @export var itemName : String
 @export var description : String
-@export var icon : Texture2D
+@export var icon := preload("res://UI/GreyCrystalPNG.png")
 @export var effectValue : float 
 @export var maxCharge : float = 200
 @export var currentCharge : float = 200

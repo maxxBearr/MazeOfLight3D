@@ -7,7 +7,8 @@ var mySlotIndex : int = -1
 var basePos
 var baseScale
 var tween : Tween
-
+var CRYSTALICON_SLOT_PNG = preload("uid://b348urhaxejbt")
+var currentColor : Color = Color.ANTIQUE_WHITE
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	texture = emptySlotText
@@ -15,18 +16,32 @@ func _ready() -> void:
 	mouse_exited.connect(onMouseExited)
 	CrystalManager.crystalChargeChanged.connect(onCrystalChargeChanged)
 	CrystalManager.activeZoneChanged.connect(onActiveZoneChanged)
-	basePos = position
 	baseScale = scale
+	tooltip_text = "see how i look"
 
 
 func isEmpty () -> bool:
 	return itemData == null
 	
 func addItem (item : ItemData):
+	basePos = position
 	itemData = item 
 	if item.icon:
 		texture = item.icon
-		modulate = Color.WHITE
+		if item.crystalType == item.CrystalTypes.Red:
+			modulate = Color.RED
+			currentColor = Color.RED
+		if item.crystalType == item.CrystalTypes.Blue:
+			modulate = Color.BLUE
+			currentColor = Color.BLUE
+		if item.crystalType == item.CrystalTypes.Green:
+			modulate = Color.GREEN
+			currentColor = Color.GREEN
+		if item.crystalType == item.CrystalTypes.General:
+			modulate = Color.NAVAJO_WHITE
+			currentColor = Color.NAVAJO_WHITE
+		
+
 
 
 func onMouseEntered ():
@@ -41,9 +56,7 @@ func onCrystalChargeChanged (slotIndex : int):
 	if mySlotIndex == slotIndex:
 		if itemData != null:
 			var chargePercent = itemData.getCurrentCharge()
-			print("Slot ", mySlotIndex, " charge: ", chargePercent, " modulate will be: ", Color.WHITE.lerp(Color.DARK_GRAY, 1.0 - chargePercent))
-
-			modulate = Color.WHITE.lerp(Color.DARK_GRAY, 1.0 - chargePercent)
+			modulate = currentColor.lerp(Color.DARK_GRAY, 1.0 - chargePercent)
 	
 func onActiveZoneChanged (crystalDict : Dictionary):
 	

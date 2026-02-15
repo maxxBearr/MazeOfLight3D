@@ -5,9 +5,6 @@
 [ext_resource type="Script" uid="uid://b0xeuufp3415x" path="res://UI/inventory_slots.gd" id="1_pis6k"]
 [ext_resource type="Script" uid="uid://ccks2ifejhf3j" path="res://UI/health_bar.gd" id="2_4fiuh"]
 [ext_resource type="Script" uid="uid://c7aba7ewofjby" path="res://UI/item_tool_tip.gd" id="2_jgypo"]
-[ext_resource type="Texture2D" uid="uid://dht313r6e75gi" path="res://textures/Rock030_2K-PNG_Color.png" id="3_c7tqi"]
-[ext_resource type="Texture2D" uid="uid://ro776po5foc5" path="res://textures/T_4_2_Tile_basecolor.PNG" id="5_cbfhl"]
-[ext_resource type="Texture2D" uid="uid://b8ku7un06jxwf" path="res://textures/T_44_5_Tile_basecolor.PNG" id="6_4fiuh"]
 [ext_resource type="Script" uid="uid://0opev22hgi2d" path="res://UI/InteractPrompt.gd" id="8_cbfhl"]
 [ext_resource type="Script" uid="uid://cmxii7ve0rsw7" path="res://UI/tell_player.gd" id="10_h81ot"]
 
@@ -42,70 +39,66 @@ script = ExtResource("1_pis6k")
 [node name="ItemSlots" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=43706017]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("3_c7tqi")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1850689099]
+[node name="ItemSlots2" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=243921884]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("5_cbfhl")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1831935843]
+[node name="ItemSlots3" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=175470099]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1800181182]
+[node name="ItemSlots4" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=724958707]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1786941515]
+[node name="ItemSlots5" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=623051990]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=62252728]
+[node name="ItemSlots6" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1627285286]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1368198330]
+[node name="ItemSlots7" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=874011455]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1346312888]
+[node name="ItemSlots8" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=554679568]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1812848]
+[node name="ItemSlots9" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1231521427]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
-[node name="TextureRect10" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1175642270]
+[node name="ItemSlots10" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1543121174]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("6_4fiuh")
+expand_mode = 1
+script = ExtResource("1_jgypo")
+
+[node name="ItemSlots11" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=373057239]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 expand_mode = 1
 script = ExtResource("1_jgypo")
 
@@ -151,6 +144,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "charge"
+
+[node name="ActivityLabel" type="Label" parent="ItemToolTip/MarginContainer/VBoxContainer" unique_id=1742712278]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="InteractPompt" type="Label" parent="." unique_id=559736845]
 offset_right = 40.0

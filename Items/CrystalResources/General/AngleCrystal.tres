@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dl8xp4533f7ah"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dl8xp4533f7ah"]
 
+[ext_resource type="Texture2D" uid="uid://b348urhaxejbt" path="res://UI/CrystaliconSlotPNG.png" id="1_20scq"]
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_esvxw"]
 
 [resource]
 script = ExtResource("1_esvxw")
 itemName = "Angle Crystal"
 description = "increase light angle by 12%"
-effectType = "Angle"
+icon = ExtResource("1_20scq")
 effectValue = 1.12
 metadata/_custom_type_script = "uid://chabwrui44qbp"
