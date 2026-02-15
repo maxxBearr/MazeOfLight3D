@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bywcemvtk58ec"]
 
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_bn4ke"]
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_gfhp8"]
 
 [resource]
 script = ExtResource("1_gfhp8")
-itemName = "RechargeCrystals"
-description = "Oncrease light color rotation speed by 60%"
-effectValue = 1.2
+itemName = "Recharge Crystal"
+description = "Charge all crystals by 40% on pick up "
+effectValue = 1.4
 maxCharge = 350.0
 currentCharge = 350.0
 crystalType = 2

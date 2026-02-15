@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bne4fe6i6uibd"]
 
-[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_phsvi"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_aglxd"]
+[ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="2_k6sxl"]
 
 [resource]
-script = ExtResource("1_phsvi")
-itemName = "AngleCrystal"
+script = ExtResource("2_k6sxl")
+itemName = "Angle Crystal"
 description = "Increase Light width by 40%"
 effectValue = 1.4
 maxCharge = 300.0

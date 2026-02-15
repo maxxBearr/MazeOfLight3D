@@ -80,7 +80,7 @@ func updateCrystalType(crystalType : ItemData.CrystalTypes):
 		mat.set_shader_parameter("albedo", newColor)
 	for option:MeshInstance3D in arrayOfBase:
 		var baseColor = newColor
-		var h = wrapf(baseColor.h + randf_range(-0.15, 0.15), 0.0, 1.0)
+		var h = wrapf(baseColor.h + randf_range(-0.1, 0.1), 0.0, 1.0)
 		var s = baseColor.s
 		var v = baseColor.v
 
@@ -177,6 +177,11 @@ func selectCrystal (crystal: Node3D, index : int):
 			animation_player.play("PopOut3")
 	await animation_player.animation_finished
 	InventoryManager.addItem(item)
+	if item.effectType == ItemData.EffectTypes.RechargeAllCrsyatls:
+		for items in range(InventoryManager.slots.size()):
+			if item != null:
+				var cry = InventoryManager.slots[items]
+				cry.currentCharge += cry.maxCharge * 0.2
 	print("selected:", item.itemName)
 	get_tree().paused = false
 	get_parent().queue_free()

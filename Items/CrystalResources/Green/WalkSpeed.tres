@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_vgsjq")
-itemName = "WalkSpeedCrytal"
+itemName = "Walk Speed Crystal"
 description = "Increase Movment speed while green"
 effectValue = 2.0
 maxCharge = 350.0

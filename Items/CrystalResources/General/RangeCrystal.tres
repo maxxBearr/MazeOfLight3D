@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dytlmt6r1btb6"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dytlmt6r1btb6"]
 
-[ext_resource type="Texture2D" uid="uid://df0jji1hsuods" path="res://Items/CrystalModels/crystal_8_0.png" id="1_d70cu"]
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_dxub4"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_rv8au"]
 
 [resource]
 script = ExtResource("1_dxub4")
 itemName = "Range Crystal"
-description = "Incrrease light range by 40%"
-icon = ExtResource("1_d70cu")
-effectType = "Range"
-effectValue = 1.4
+description = "Incrrease light range by 15%"
+effectValue = 1.15
+maxCharge = 500.0
+currentCharge = 500.0
+effectType = 6
 metadata/_custom_type_script = "uid://chabwrui44qbp"

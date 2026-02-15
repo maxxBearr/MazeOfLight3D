@@ -13,9 +13,9 @@
 [ext_resource type="Resource" uid="uid://bywcemvtk58ec" path="res://Items/CrystalResources/Green/RechargeAllCrystals.tres" id="11_it837"]
 [ext_resource type="Resource" uid="uid://bec5n2a3ilw84" path="res://Items/CrystalResources/Green/RotationSpeed.tres" id="12_3rqmd"]
 [ext_resource type="Resource" uid="uid://bpll7xp8i0df0" path="res://Items/CrystalResources/Green/WalkSpeed.tres" id="13_k26qi"]
-[ext_resource type="Resource" uid="uid://ucqng5gva0mb" path="res://Items/CrystalResources/Red/Angle.tres" id="14_jawi6"]
+[ext_resource type="Resource" uid="uid://ucqng5gva0mb" path="res://Items/CrystalResources/Red/DamageCrystal.tres" id="14_jawi6"]
 [ext_resource type="Resource" uid="uid://dtvc76t5tne1a" path="res://Items/CrystalResources/Red/AOEdamage.tres" id="15_eqbyf"]
-[ext_resource type="Resource" uid="uid://bne4fe6i6uibd" path="res://Items/CrystalResources/Red/Damage.tres" id="16_nsjsw"]
+[ext_resource type="Resource" uid="uid://bne4fe6i6uibd" path="res://Items/CrystalResources/Red/AngleCrystal.tres" id="16_nsjsw"]
 [ext_resource type="Resource" uid="uid://f6icl2tmmjqt" path="res://Items/CrystalResources/Red/DblEnergyAngleHlfRng.tres" id="17_y7lwq"]
 [ext_resource type="Resource" uid="uid://dgs3yiuois1la" path="res://Items/CrystalResources/Red/DoubleALlDamage.tres" id="18_ncjri"]
 

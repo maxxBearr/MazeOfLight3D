@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bwsj4h4tcmakc"]
 
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_mvbox"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_w5mod"]
 
 [resource]
 script = ExtResource("1_mvbox")
-itemName = "LargerSource"
+itemName = "Larger Source"
 description = "Increase the ambient light emitted by the lantern by 40%"
 effectValue = 1.4
 maxCharge = 400.0

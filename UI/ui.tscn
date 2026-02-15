@@ -13,10 +13,10 @@ process_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1447832038]
 anchors_preset = -1
-anchor_right = 0.238
-anchor_bottom = 1.008
-offset_right = -0.17599487
-offset_bottom = -355.18402
+anchor_right = 0.377
+anchor_bottom = 1.0
+offset_right = 309.69598
+offset_bottom = -521.0
 theme = ExtResource("1_hat8c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1414709530]
@@ -24,7 +24,9 @@ layout_mode = 2
 
 [node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=589663766]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 20)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 1
 max_value = 10.0
 value = 10.0
@@ -37,69 +39,80 @@ layout_mode = 2
 script = ExtResource("1_pis6k")
 
 [node name="ItemSlots" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=43706017]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots2" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=243921884]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots3" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=175470099]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots4" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=724958707]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots5" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=623051990]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots6" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1627285286]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots7" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=874011455]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots8" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=554679568]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots9" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1231521427]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots10" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=1543121174]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemSlots11" type="TextureRect" parent="MarginContainer/VBoxContainer/InventorySlots" unique_id=373057239]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(46, 58)
 layout_mode = 2
 expand_mode = 1
+stretch_mode = 5
 script = ExtResource("1_jgypo")
 
 [node name="ItemToolTip" type="PanelContainer" parent="." unique_id=849761547]

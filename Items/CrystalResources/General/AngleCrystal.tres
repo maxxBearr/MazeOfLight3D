@@ -6,7 +6,10 @@
 [resource]
 script = ExtResource("1_esvxw")
 itemName = "Angle Crystal"
-description = "increase light angle by 12%"
+description = "increase light angle by 1%"
 icon = ExtResource("1_20scq")
-effectValue = 1.12
+effectValue = 1.1
+maxCharge = 500.0
+currentCharge = 500.0
+effectType = 1
 metadata/_custom_type_script = "uid://chabwrui44qbp"

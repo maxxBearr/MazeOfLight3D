@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://leij8m5a2m1v"]
 
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_1byt6"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_jbpyf"]
 
 [resource]
 script = ExtResource("1_1byt6")
-itemName = "RangeCrystal"
+itemName = "Range Crystal"
 description = "Increase Light Range by 40%"
 effectValue = 1.4
 maxCharge = 350.0

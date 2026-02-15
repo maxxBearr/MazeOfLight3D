@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c3o0mbt4whmpn"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3o0mbt4whmpn"]
 
-[ext_resource type="Texture2D" uid="uid://c8yils40bcfv0" path="res://InteriorCastle/Textures/Gold.png" id="1_f0kpk"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_2tiem"]
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_y2owm"]
 
 [resource]
 script = ExtResource("1_y2owm")
 itemName = "Energy Crystal"
-description = "Increase Light Intensity by 80%%"
-icon = ExtResource("1_f0kpk")
-effectType = "Energy"
-effectValue = 1.85
+description = "Increase Light brightness by 20%"
+effectValue = 1.2
+maxCharge = 500.0
+currentCharge = 500.0
+effectType = 2
 metadata/_custom_type_script = "uid://chabwrui44qbp"

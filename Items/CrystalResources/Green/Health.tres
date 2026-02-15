@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3nc3j3yu7w4r"]
 
 [ext_resource type="Script" uid="uid://chabwrui44qbp" path="res://Items/ItemData.gd" id="1_jvetn"]
+[ext_resource type="Texture2D" uid="uid://7cyo76bjisrj" path="res://UI/GreyCrystalPNG.png" id="1_kamm6"]
 
 [resource]
 script = ExtResource("1_jvetn")
-itemName = "HealthCrystal"
-description = "Slowly heal while green"
+itemName = "Health Crystal"
+description = "Slowly heal while light is green"
 effectValue = 1.01
 maxCharge = 350.0
 currentCharge = 350.0

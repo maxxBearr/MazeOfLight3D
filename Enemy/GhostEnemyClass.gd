@@ -162,18 +162,20 @@ func updateTakeDamageAOESound(damageAmount:float):
 func stopTakeDamageSound():
 	if take_damage_sound.playing:
 		if stopConeTween and stopConeTween.is_running():
-			stopConeTween = create_tween()
-			stopConeTween.tween_property(take_damage_sound,"volume_db", -40, 3.0)
-			stopConeTween.finished.connect(func():
-				take_damage_sound.stop())
+			return
+		stopConeTween = create_tween()
+		stopConeTween.tween_property(take_damage_sound,"volume_db", -40, 3.0)
+		stopConeTween.finished.connect(func():
+			take_damage_sound.stop())
 
 func stopTakingAOEDamageSound():
 	if take_damage_sound_2.playing:
 		if stopAOEtween and stopAOEtween.is_running():
-			stopAOEtween = create_tween()
-			stopAOEtween.tween_property(take_damage_sound_2,"volume_db", -40, 3.0)
-			stopAOEtween.finished.connect(func():
-				take_damage_sound_2.stop())
+			return
+		stopAOEtween = create_tween()
+		stopAOEtween.tween_property(take_damage_sound_2,"volume_db", -40, 3.0)
+		stopAOEtween.finished.connect(func():
+			take_damage_sound_2.stop())
 func spawnDamageLabel(amount : int, color : Color):
 	var label = damageLabelScene.instantiate()
 	get_tree().root.add_child(label)

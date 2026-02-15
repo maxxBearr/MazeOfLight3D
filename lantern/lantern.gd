@@ -84,7 +84,7 @@ func recalcEffects():
 			var effect = crystal.effectValue
 			energy *= lerp(1.0, effect, activeStrength)
 			angle *= lerp(1.0, effect, activeStrength)
-			lightRange *= 0.5
+			lightRange *= lerp(1.0, 0.5, activeStrength)
 		if crystal.effectType == crystal.EffectTypes.IncreaseAOE:
 			var effect = crystal.effectValue
 			omniRange *= lerp(1.0, effect, activeStrength)
